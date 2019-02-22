@@ -14,6 +14,42 @@ import java.awt.Rectangle;
  */
 public class Avatar{
     private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public void setLocation(Rectangle location) {
+        this.location = location;
+    }
+
+    public void setGoalsScored(int goalsScored) {
+        this.goalsScored = goalsScored;
+    }
+
+    public void setGoalsMissed(int goalsMissed) {
+        this.goalsMissed = goalsMissed;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public int getGoalsScored() {
+        return goalsScored;
+    }
+
+    public int getGoalsMissed() {
+        return goalsMissed;
+    }
     private String nationality;
     private Rectangle location;
     private int goalsScored;
@@ -26,7 +62,7 @@ public class Avatar{
         goalsScored= 0;
         goalsMissed = 0;
     }
-    public boolean kicksTheFootball(Football football){
+    public boolean kickFootball(Football football){
         return true;
     }
     public int updateGoalsScored(int change){
