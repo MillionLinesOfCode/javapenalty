@@ -5,6 +5,10 @@ import java.awt.Rectangle;
  *
  * @author Reeyan.mak
  */
+/*
+*This is the file for the player that the user controls
+*The user can choose the players name
+*/
 public class Avatar{
     // These are the private instance variables:
     private String name;
@@ -14,8 +18,8 @@ public class Avatar{
     private int goalsMissed;
     //Constructor
     public Avatar(String name, String nationality, Rectangle location, int goalsScored, int goalsMissed){
-        name = "C.Ronaldo";
-        nationality = "Portugal";
+        this.name = name;
+        this.nationality = nationality;
         location = new Rectangle(0, 0, 0, 0);
         goalsScored= 0;
         goalsMissed = 0;
@@ -35,7 +39,7 @@ public class Avatar{
         goalsScored= 0;
         goalsMissed = 0;
     }
-    //getter
+    //getter 
     public String getName() {
         return name;
     }
