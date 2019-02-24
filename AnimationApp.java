@@ -63,19 +63,24 @@ public class AnimationApp{
                     System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 2:
-                    System.out.println("Great! You chose L.Messi");
+		    Avatar avatar = new Avatar("L.Messi", "");
+                    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 3:
-                    System.out.println("Great! You chose P.Pogba");
+		    Avatar avatar = new Avatar("P.Pogba", "");
+		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 4:
-                    System.out.println("Great! You chose Neymar");
+		    Avatar avatar = new Avatar("Neymar", "");
+		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 5:
-                    System.out.println("Great! You chose E.Hazard");
+		    Avatar avatar = new Avatar("E.Hazard", "");
+		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 default:
-                    System.out.println("Your default player is C.Ronaldo");
+		    Avatar avatar = new Avatar("C.Ronaldo", "");
+		    System.out.println("Great! You chose " + avatar.getName());
                     break;
             }
             System.out.println("Choose your favorite goalkeeper to save the penalties");
