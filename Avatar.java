@@ -20,8 +20,8 @@ public class Avatar{
         this.name = name;
         this.nationality = nationality;
         location = new Rectangle(0, 0, 0, 0);
-        goalsScored= 0;
-        goalsMissed = 0;
+        this.goalsScored= goalsScored;
+        this.goalsMissed =goalsMissed 0;
     }
     //Default Constructor
     public Avatar(){
