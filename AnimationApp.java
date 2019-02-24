@@ -92,22 +92,28 @@ public class AnimationApp{
             int goalkeeperOption = sc.nextInt();
             switch (goalkeeperOption) {
                 case 1:
-                    System.out.println("Cool! You chose D.de Gea");
+		    Goalkeeper goalkeeper = new Goalkeeper("D.de Gea", "Spain");
+                    System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 2:
-                    System.out.println("Cool! You chose J.Oblak");
+		    Goalkeeper goalkeeper = new Goalkeeper("J.Oblak", "Slovenia");
+                    System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 3:
-                    System.out.println("Cool! You chose M.ter Stegen");
+		    Goalkeeper goalkeeper = new Goalkeeper("M.ter Stegen", "Germany");
+                    System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 4:
-                    System.out.println("Cool! You chose T.Courtois");
+		    Goalkeeper goalkeeper = new Goalkeeper("T.Courtois", "Belgium");
+                    System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 5:
-                    System.out.println("Cool! You chose M.Neuer");
+		    Goalkeeper goalkeeper = new Goalkeeper("M.Neuer", "Germany");
+                    System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 default:
-                    System.out.println("Your default goalkeeper is D.de Gea");
+		    Goalkeeper goalkeeper = new Goalkeeper("D.de Gea", "Spain");
+                    System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
             }
             //Ask the user for input in order to take the shot
