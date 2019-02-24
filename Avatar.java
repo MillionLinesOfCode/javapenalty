@@ -1,16 +1,15 @@
-
 import java.awt.Rectangle;
-
+import java.util.*;
 /**
  *
- * @author Reeyan.mak
+ * <b>@author Reeyan.mak</b>
  */
 /*
 *This is the file for the player that the user controls
-*The user can choose the players name
+*The user can choose the players name 
 */
 public class Avatar{
-    // These are the private instance variables:
+    // These are the private instance variables
     private String name;
     private String nationality;
     private Rectangle location;
@@ -24,9 +23,9 @@ public class Avatar{
         goalsScored= 0;
         goalsMissed = 0;
     }
-    //Constructor
+    //Default Constructor
     public Avatar(){
-        name = "C.Ronaldo";
+        name = "C.Ronaldo"; //It had to be him 
         nationality = "Portugal";
         location = new Rectangle(0, 0, 0, 0);
         goalsScored= 0;
@@ -39,19 +38,20 @@ public class Avatar{
         goalsScored= 0;
         goalsMissed = 0;
     }
-    //getter 
+    //getter method for the players name
     public String getName() {
         return name;
     }
-    //Methods
-    //This methods returns true if the avatar takes a shot
+    //Other methods
+    //This method returns true if the avatar takes a shot(first step!)
     public boolean kickFootball(Football football){
         return true;
     }
+    //GUI
     public int processAvatarShot() {
         return 0;
     }    
-    //This method updates the number of goals scored by the player
+    //This method updates the number of goals scored by the player each time he takes a shot
     public int updateGoalsScored(int change){
         return 0;
     }
@@ -63,5 +63,4 @@ public class Avatar{
     public Rectangle getLocation() {
         return location;
     }
-    
 }
