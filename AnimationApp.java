@@ -63,23 +63,23 @@ public class AnimationApp{
                     System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 2:
-		    Avatar avatar = new Avatar("L.Messi", "");
+		    Avatar avatar = new Avatar("L.Messi", "Argentina");
                     System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 3:
-		    Avatar avatar = new Avatar("P.Pogba", "");
+		    Avatar avatar = new Avatar("P.Pogba", "France");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 4:
-		    Avatar avatar = new Avatar("Neymar", "");
+		    Avatar avatar = new Avatar("Neymar", "Brazil");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 5:
-		    Avatar avatar = new Avatar("E.Hazard", "");
+		    Avatar avatar = new Avatar("E.Hazard", "Belgium");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 default:
-		    Avatar avatar = new Avatar("C.Ronaldo", "");
+		    Avatar avatar = new Avatar("C.Ronaldo", "Portugal");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
             }
