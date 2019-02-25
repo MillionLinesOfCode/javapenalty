@@ -122,13 +122,26 @@ public class AnimationApp{
                     break;
             }
             //Ask the user for input in order to take the shot
-            System.out.println("Choose a number to take a shot");
-            System.out.println(" ____________________________");
-            System.out.println("|         |        |         |");
-            System.out.println("|    1    |   2    |    3    |");
-            System.out.println("|_________|________|_________|");
-            System.out.println("|         |        |         |");
-            System.out.println("|    4    |   5    |    6    |");
-            System.out.println("|_________|________|_________|");
+            System.out.println("Choose a number to take a shot \n" +
+                               " ____________________________  \n" +
+                               "|         |        |         | \n" +
+                               "|    1    |   2    |    3    | \n" +
+                               "|_________|________|_________| \n" +
+                               "|         |        |         | \n" +
+                               "|    4    |   5    |    6    | \n" +
+                               "|_________|________|_________| \n");
+            
+            for (int i = 0; i < 5; i++) {
+                int shotInput = sc.nextInt();
+                while (shotInput < 1 || shotInput > 6){
+                    System.out.println("Error! Please enter a valid number");
+                    shotInput = sc.nextInt();
+                }
+                Goalkeeper goalkeeper = new Goalkeeper("D.de Gea", "Spain");
+                goalkeeper.processGoalkeeperSave(shotInput, goalkeeper);
+                
+            }
+            System.out.println("Game over!");
         }
-}
+    }
+
