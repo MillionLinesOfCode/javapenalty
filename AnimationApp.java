@@ -117,8 +117,8 @@ public class AnimationApp{
                     System.out.println("Cool! You chose " + neuer.getName());
                     break;
                 default:
-		    Goalkeeper gea = new Goalkeeper("D.de Gea", "Spain");
-                    System.out.println("Cool! You chose " + gea.getName());
+		    Goalkeeper defaultKeeper = new Goalkeeper("D.de Gea", "Spain");
+                    System.out.println("Cool! You chose " + defaultKeeper.getName());
                     break;
             }
             //Ask the user for input in order to take the shot
