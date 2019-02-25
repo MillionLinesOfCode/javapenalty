@@ -43,10 +43,7 @@ public class Avatar{
     //This methods returns true if the avatar takes a shot
     public boolean kickFootball(Football football){
         return true;
-    }
-    public int processAvatarShot() {
-        return 0;
-    }    
+    } 
     //This method updates the number of goals scored by the player
     public int updateGoalsScored(int change){
         return 0;
