@@ -79,8 +79,8 @@ public class AnimationApp{
 		    System.out.println("Great! You chose " + hazard.getName());
                     break;
                 default:
-		    Avatar ronaldo = new Avatar("C.Ronaldo", "Portugal");
-		    System.out.println("Great! You chose " + ronaldo.getName());
+		    Avatar defaultPlayer = new Avatar("C.Ronaldo", "Portugal");
+		    System.out.println("Great! You chose " + defaultPlayer.getName());
                     break;
             }
             System.out.println("Choose your favorite goalkeeper to save the penalties");
