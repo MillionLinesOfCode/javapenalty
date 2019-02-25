@@ -85,7 +85,7 @@ public class AnimationApp{
                     break;
                 default:
 		    Avatar defaultPlayer = new Avatar("C.Ronaldo", "Portugal");
-		    System.out.println("Great! You chose " + defaultPlayer.getName());
+		    System.out.println("Your default player is " + defaultPlayer.getName());
                     break;
             }
             System.out.println("Choose your favorite goalkeeper to save the penalties");
@@ -118,7 +118,7 @@ public class AnimationApp{
                     break;
                 default:
 		    Goalkeeper defaultKeeper = new Goalkeeper("D.de Gea", "Spain");
-                    System.out.println("Cool! You chose " + defaultKeeper.getName());
+                    System.out.println("Your default keeper is " + defaultKeeper.getName());
                     break;
             }
             //Ask the user for input in order to take the shot
