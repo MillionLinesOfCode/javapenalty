@@ -1,15 +1,12 @@
+
 import java.awt.Rectangle;
-import java.util.*;
+
 /**
  *
- * <b>@author Reeyan.mak</b>
+ * @author Reeyan.mak
  */
-/*
-*This is the file for the player that the user controls
-*The user can choose the players name 
-*/
 public class Avatar{
-    // These are the private instance variables
+    // These are the private instance variables:
     private String name;
     private String nationality;
     private Rectangle location;
@@ -17,41 +14,40 @@ public class Avatar{
     private int goalsMissed;
     //Constructor
     public Avatar(String name, String nationality, Rectangle location, int goalsScored, int goalsMissed){
-        this.name = name;
-        this.nationality = nationality;
-        location = new Rectangle(0, 0, 0, 0);
-        this.goalsScored = goalsScored;
-        this.goalsMissed = goalsMissed;
-    }
-    //Default Constructor
-    public Avatar(){
-        name = "C.Ronaldo"; //It had to be him 
+        name = "C.Ronaldo";
         nationality = "Portugal";
         location = new Rectangle(0, 0, 0, 0);
-        goalsScored = 0;
+        goalsScored= 0;
+        goalsMissed = 0;
+    }
+    //Constructor
+    public Avatar(){
+        name = "C.Ronaldo";
+        nationality = "Portugal";
+        location = new Rectangle(0, 0, 0, 0);
+        goalsScored= 0;
         goalsMissed = 0;
     }
     public Avatar(String name, String nationality){
         this.name = name;
         this.nationality = nationality;
         location = new Rectangle(0, 0, 0, 0);
-        goalsScored = 0;
+        goalsScored= 0;
         goalsMissed = 0;
     }
-    //getter method for the players name
+    //getter
     public String getName() {
         return name;
     }
-    //Other methods
-    //This method returns true if the avatar takes a shot(first step!)
+    //Methods
+    //This methods returns true if the avatar takes a shot
     public boolean kickFootball(Football football){
         return true;
     }
-    //GUI
     public int processAvatarShot() {
         return 0;
     }    
-    //This method updates the number of goals scored by the player each time he takes a shot
+    //This method updates the number of goals scored by the player
     public int updateGoalsScored(int change){
         return 0;
     }
@@ -63,4 +59,5 @@ public class Avatar{
     public Rectangle getLocation() {
         return location;
     }
+    
 }
