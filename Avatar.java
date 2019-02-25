@@ -20,22 +20,22 @@ public class Avatar{
         this.name = name;
         this.nationality = nationality;
         location = new Rectangle(0, 0, 0, 0);
-        this.goalsScored= goalsScored;
-        this.goalsMissed =goalsMissed 0;
+        this.goalsScored = goalsScored;
+        this.goalsMissed = goalsMissed;
     }
     //Default Constructor
     public Avatar(){
         name = "C.Ronaldo"; //It had to be him 
         nationality = "Portugal";
         location = new Rectangle(0, 0, 0, 0);
-        goalsScored= 0;
+        goalsScored = 0;
         goalsMissed = 0;
     }
     public Avatar(String name, String nationality){
         this.name = name;
         this.nationality = nationality;
         location = new Rectangle(0, 0, 0, 0);
-        goalsScored= 0;
+        goalsScored = 0;
         goalsMissed = 0;
     }
     //getter method for the players name
