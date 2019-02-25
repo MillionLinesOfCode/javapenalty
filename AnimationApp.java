@@ -59,27 +59,27 @@ public class AnimationApp{
             int playerOption = sc.nextInt();
             switch (playerOption) {
                 case 1:
-                    Avatar avatar = new Avatar("C.Ronaldo", "Portugal");
+                    Avatar ronaldo = new Avatar("C.Ronaldo", "Portugal");
                     System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 2:
-		    Avatar avatar = new Avatar("L.Messi", "Argentina");
+		    Avatar messi = new Avatar("L.Messi", "Argentina");
                     System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 3:
-		    Avatar avatar = new Avatar("P.Pogba", "France");
+		    Avatar pogba = new Avatar("P.Pogba", "France");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 4:
-		    Avatar avatar = new Avatar("Neymar", "Brazil");
+		    Avatar neymar = new Avatar("Neymar", "Brazil");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 case 5:
-		    Avatar avatar = new Avatar("E.Hazard", "Belgium");
+		    Avatar hazard = new Avatar("E.Hazard", "Belgium");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
                 default:
-		    Avatar avatar = new Avatar("C.Ronaldo", "Portugal");
+		    Avatar ronaldo = new Avatar("C.Ronaldo", "Portugal");
 		    System.out.println("Great! You chose " + avatar.getName());
                     break;
             }
@@ -92,27 +92,27 @@ public class AnimationApp{
             int goalkeeperOption = sc.nextInt();
             switch (goalkeeperOption) {
                 case 1:
-		    Goalkeeper goalkeeper = new Goalkeeper("D.de Gea", "Spain");
+		    Goalkeeper gea = new Goalkeeper("D.de Gea", "Spain");
                     System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 2:
-		    Goalkeeper goalkeeper = new Goalkeeper("J.Oblak", "Slovenia");
+		    Goalkeeper oblak = new Goalkeeper("J.Oblak", "Slovenia");
                     System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 3:
-		    Goalkeeper goalkeeper = new Goalkeeper("M.ter Stegen", "Germany");
+		    Goalkeeper stegen = new Goalkeeper("M.ter Stegen", "Germany");
                     System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 4:
-		    Goalkeeper goalkeeper = new Goalkeeper("T.Courtois", "Belgium");
+		    Goalkeeper courtois = new Goalkeeper("T.Courtois", "Belgium");
                     System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 case 5:
-		    Goalkeeper goalkeeper = new Goalkeeper("M.Neuer", "Germany");
+		    Goalkeeper neuer = new Goalkeeper("M.Neuer", "Germany");
                     System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
                 default:
-		    Goalkeeper goalkeeper = new Goalkeeper("D.de Gea", "Spain");
+		    Goalkeeper gea = new Goalkeeper("D.de Gea", "Spain");
                     System.out.println("Cool! You chose " + goalkeeper.getName());
                     break;
             }
