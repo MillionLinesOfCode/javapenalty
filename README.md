@@ -10,3 +10,5 @@ To run the program, switch to the Demo-1 branch. Download all the .java files an
 Then compile them using javac *.java
 
 Proceed to run the AnimationApp.java file using "java AnimationApp" and enjoy scoring goals!
+
+NOTE: THIS IS THE TEXT BASED VERSION OF THE PROJECT WHICH DEMONSTRATES THE LOGIC USED AND PROVIDES THE USER WITH BASIC INTERACTION
