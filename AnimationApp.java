@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
-This is the AnimationApp class, where it  controls the entire application. 
+This is the AnimationApp class, which controls the entire application. 
 1. Interact with the human player to ask it for a move.
 2. Move the avatar as specified
 3. Check if any obstacles are hit.  If so react appropriately.
@@ -20,28 +20,33 @@ public class AnimationApp{
         
 	// Methods
 	public void displayAvatarShot() {
+		//GUI
 	// It asks the human for input and then shows the animation as per input
 	}
 	
 	public void displayGoalkeeperSave() {
+		//GUI
 	// Based on the Goalkeeper's random decision to dive, it will dive at one side regardless of the player shooting the ball.
 	// If the keeper dives at the same side as the ball was kicked, it won't let the ball get inside the post.
 	}
 	
 	public int printCurrentScore() {
-	// From the arraylist maintained for score it will take the number of goals and print.
+	// From the arraylist maintained for score it will take the number of goals and print the result .
 		return goal.size();
 	}
 	
 	public void drawCurrentScore() {
+		//GUI
 	// Draws the score on the screen, from the above function "printCurrentScore()"
 	}
 	
 	public void performAvatarCelebration() {
+		//GUI
 	// Depending on the output of the situation, avatar will accordingly perform a celebration.
 	}
 	
 	public void performGoalkeeperCelebration() {
+		//GUI
 	// Depending on the output of the situation, Goalkeeper will accordingly perform a celebration.
 	}
         public static void main(String[] args) {
