@@ -1,6 +1,7 @@
 # javapenalty: What is it?
 A simple football penalty shootout game written in the Java programming language.
 
+# How it works
 Select your favourite player from a list of five players.
 
 Select a goalkeeper from a list of five keepers.
