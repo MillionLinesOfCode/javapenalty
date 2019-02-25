@@ -3,35 +3,30 @@ import java.util.Random;
         
 public class Goalkeeper{
     // These are the private instance variables:
-    private String name; // The name of the goalkeeper which will be picked by the player from a limited
-                         // number of choices
-    private String nationality; // Of the goalkeeper, again chosen by the player
-    private Rectangle location; // Of the goalkeeper, which should be in the goalpost!
-    /**
-     * @return the nationality
-     */
+    private String name; // The name of the goalkeeper which will be picked by the player
+    private String nationality; // of the goalkeeper, again chosen by the player
+    private Rectangle location; // of the goalkeeper, which should be in the goalpost!
+    
+    //Constructors
+    public Goalkeeper(String name, String nationality){
+        this.name = name;
+        this.nationality = nationality;
+    }
+    public Goalkeeper(){
+        name = "D.de Gea";
+        nationality = "Spain";
+        location = new Rectangle(0, 0, 0, 0);
+    }
     //Getter and setter methods
     public String getNationality() {
         return nationality;
     }
-
-    /**
-     * @param nationality the nationality to set
-     */
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
-
-    /**
-     * @return the name
-     */
     public String getName() {
         return name;
     }
-
-    /**
-     * @param name the name to set
-     */
     public void setName(String name) {
         this.name = name;
     }
@@ -55,6 +50,4 @@ public class Goalkeeper{
     public Rectangle getLocation(){
         return location;
     }
-
-
 }
