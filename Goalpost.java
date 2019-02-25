@@ -1,10 +1,6 @@
-import java.util.*;
+
 import java.awt.Rectangle;
 
-/**
- *
- * @author Reeyan.mak
- */
 public class Goalpost {
     //Private instance variables
     private Rectangle location;
