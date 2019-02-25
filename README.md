@@ -16,7 +16,7 @@ Then compile them using "javac *.java"
 Proceed to run the AnimationApp.java file using "java AnimationApp" and enjoy scoring goals!
 
 # NOTE:
-This is a text based version of the final project which is used to demonstrate the logic used and provides the user with a basic level of interaction.
+This is a text based version of the final project which is intended to demonstrate the logic used and provides the user with a basic level of interaction.
 
 A Class diagram is provided for reference in both the Demo-1 branch and the master branch.
 
