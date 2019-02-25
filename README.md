@@ -8,13 +8,17 @@ The player will get 5 chances to score(or miss!).
 
 # Usage
 To run the program, first switch to the Demo-1 branch. 
+
 Download all the .java files and put them all in the same directory. 
+
 Then compile them using "javac *.java"
+
 Proceed to run the AnimationApp.java file using "java AnimationApp" and enjoy scoring goals!
 
 # NOTE:
 This is a text based version of the final project which is used to demonstrate the logic used and provides the user with a basic level of interaction.
 
 A Class diagram is provided for reference in both the Demo-1 branch and the master branch.
-Also for refernce:
+
+Also for reference:
 https://en.wikipedia.org/wiki/Penalty_kick_(association_football)
