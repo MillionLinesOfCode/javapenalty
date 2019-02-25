@@ -14,4 +14,4 @@ Proceed to run the AnimationApp.java file using "java AnimationApp" and enjoy sc
 A Class diagram is provided for reference in both the Demo-1 branch and the master branch.
 
 # NOTE:
-THIS IS THE TEXT BASED VERSION OF THE PROJECT WHICH DEMONSTRATES THE LOGIC USED AND PROVIDES THE USER WITH BASIC INTERACTION
+This is a text based version of the final project which is used to demonstrate the logic used and provides the user with a basic level of interaction.
