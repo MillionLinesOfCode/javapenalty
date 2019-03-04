@@ -22,5 +22,4 @@ Download all the .java files and put them all in the same directory.
 
 Then compile them using "javac *.java"
 
-Proceed to run the AnimationApp.java file using "java AnimationApp" and enjoy scoring goals!
-
+Proceed to run the AnimationApp.java file using "java AnimationApp" and play.
