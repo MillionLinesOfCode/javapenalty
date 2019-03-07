@@ -17,7 +17,7 @@ The player will get a total of 5 chances to score(or miss!).
 # Usage
 To run the program, first switch to the Demo-2 branch. 
 
-Download all the .java files and put them all in the same directory. 
+Download (the folder) /*all the .java files and put them all in the same directory.*/ 
 
 Then compile them using "javac *.java"
 
