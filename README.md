@@ -15,7 +15,7 @@ If the goalkeeper guesses it right he saves the shot, else you score!
 The player will get a total of 5 chances to score(or miss!).
 
 # Usage
-To run the program, first switch to the Demo-1 branch. 
+To run the program, first switch to the Demo-2 branch. 
 
 Download all the .java files and put them all in the same directory. 
 
