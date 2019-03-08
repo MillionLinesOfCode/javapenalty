@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import static javafx.application.Platform.exit;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
@@ -18,6 +21,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.Group;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.text.Font;
 
 /*
@@ -53,7 +58,114 @@ public class AnimationApp extends Application{
 	// From the arraylist maintained for score it will take the number of goals and print the result .
 		return goal.size();
 	}
-	
+	public static void processGoalkeeperSave(int shotInput, Goalkeeper goalkeeper) {
+            
+            if (shotInput == goalkeeper.randomGoalkeeperGuess() && shotInput < 7 && shotInput > 0) {
+                System.out.println("Hard luck! Your shot was saved by the keeper");
+            }
+            else { 
+                System.out.println("Amazing! You scored a goal!");
+            }
+        }
+        public static boolean processHitThePost(int shotPower) {
+            switch (shotPower) {
+                case 9:
+                    {
+                        Random rand = new Random();
+                        int randomPost9 = rand.nextInt(3);
+                        randomPost9 += 1;
+                        if (randomPost9 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 8:
+                    {
+                        Random rand = new Random();
+                        int randomPost8 = rand.nextInt(6);
+                        randomPost8 += 1;
+                        if (randomPost8 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 7:
+                    {
+                        Random rand = new Random();
+                        int randomPost7 = rand.nextInt(12);
+                        randomPost7 += 1;
+                        if (randomPost7 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 6:
+                    {
+                        Random rand = new Random();
+                        int randomPost6 = rand.nextInt(20);
+                        randomPost6 += 1;
+                        if (randomPost6 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 5:
+                    {
+                        Random rand = new Random();
+                        int randomPost5 = rand.nextInt(15);
+                        randomPost5 += 1;
+                        if (randomPost5 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 4:
+                    {
+                        Random rand = new Random();
+                        int randomPost4 = rand.nextInt(10);
+                        randomPost4 += 1;
+                        if (randomPost4 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 3:
+                    {
+                        Random rand = new Random();
+                        int randomPost3 = rand.nextInt(6);
+                        randomPost3 += 1;
+                        if (randomPost3 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 2:
+                    {
+                        Random rand = new Random();
+                        int randomPost2 = rand.nextInt(6);
+                        randomPost2 += 1;
+                        if (randomPost2 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                case 1:
+                    {
+                        Random rand = new Random();
+                        int randomPost1 = rand.nextInt(2);
+                        randomPost1 += 1;
+                        if (randomPost1 == 1) {
+                            System.out.println("You hit the post! Hard Luck!");
+                            return true;
+                        }       break;
+                    }
+                default:
+                    return false;       
+            }
+            if (shotPower < 0 || shotPower > 9);
+                    return false;   
+        }
+            
 	public void drawCurrentScore() {
 		//GUI
 	// Draws the score on the screen, from the above function "printCurrentScore()"
@@ -68,8 +180,11 @@ public class AnimationApp extends Application{
 		//GUI
 	// Depending on the output of the situation, Goalkeeper will accordingly perform a celebration.
 	}
-/*
+
         public static void main(String[] args) {
+               {
+      launch(args);
+   }
             Scanner sc = new Scanner(System.in);
             System.out.println("Welcome to the Penalty Shooutout Game!");
             System.out.println("Enter your name: ");
@@ -152,24 +267,33 @@ public class AnimationApp extends Application{
                                "|_________|________|_________| \n");
             
             for (int i = 0; i < 5; i++) {
+                System.out.println("Please enter a number to choose the direction to shoot the ball");
                 int shotInput = sc.nextInt();
+
                 while (shotInput < 1 || shotInput > 6){
                     System.out.println("Error! Please enter a valid number");
                     shotInput = sc.nextInt();
                 }
+                System.out.println("Please enter your a value for your shot power between 1-9,"
+                    + " 9 is the highest");
+                int shotPower = sc.nextInt();
+                while (shotPower < 1 || shotPower > 9) {
+                    System.out.println("Error! Please enter a valid number");
+                    shotPower = sc.nextInt();
+                }
                 Goalkeeper goalkeeper = new Goalkeeper("D.de Gea", "Spain");
-                goalkeeper.processGoalkeeperSave(shotInput, goalkeeper);
-                
+                if (processHitThePost(shotPower) == false) {
+                    processGoalkeeperSave(shotInput, goalkeeper);
+                }    
             }
             System.out.println("Game over!");
         }
-*/
-	public static void main(String[] args)
-   {
-      launch(args);
-   }
+
+	//public static void main(String[] args)
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+                
 		Image bgImg = new Image("file:Background.jpg");
 		ImageView mv = new ImageView(bgImg);
 		mv.setFitWidth(700);
@@ -192,20 +316,64 @@ public class AnimationApp extends Application{
 		centreLabel.getChildren().add(name);
 		Button doneButton = new Button("Done");
 		centreLabel.getChildren().add(doneButton);
-		
+                
+                Canvas canvas = new Canvas( 512, 512 );
+                root.getChildren().add( canvas );
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+                
 		topLabel.setAlignment(Pos.CENTER);
 		centreLabel.setAlignment(Pos.CENTER);
 		root.getChildren().add(bg);
 		
 		root.setTop(topLabel);
 		root.setCenter(centreLabel);
-		
-		
+
 		Scene scene = new Scene(root, 700, 500);
 		primaryStage.setTitle("Penalty Shootout Game");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-	}
+                
+                /*
+                 {
+        primaryStage.setTitle( "AnimationTimer Example" );
+
+        Group root = new Group();
+        Scene theScene = new Scene( root );
+        primaryStage.setScene( theScene );
+
+        Canvas canvas = new Canvas( 1000, 1000 );
+        root.getChildren().add( canvas );
+
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        Image space = new Image( "DeGeaSave1.png" );
+        Image heya = new Image( "DeGeaSave1.png" );
+        Image beya = new Image( "DeGeaSave1.png" );
+        
+        final long startNanoTime = System.nanoTime();
+
+        new AnimationTimer()
+        {
+            public void handle(long currentNanoTime)
+            {
+                double t = (currentNanoTime - startNanoTime) / 1000000000.0; 
+
+                double x = 232 + 128 * Math.cos(t);
+                double y = 232 + 128 * Math.sin(t);
+
+                // Clear the canvas
+                gc.clearRect(0, 0, 512,512);
+
+                // background image clears canvas
+                gc.drawImage( space, 0, 0 );
+                gc.drawImage( heya, x, y );
+                gc.drawImage( beya, 196, 196 );
+            }
+        }.start();
+
+        primaryStage.show();
+        */
+    }
+}
 		
- }
 
