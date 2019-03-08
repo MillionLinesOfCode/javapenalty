@@ -38,14 +38,6 @@ public class Goalkeeper{
         randomSave += 1;
         return randomSave;
     }
-    public void processGoalkeeperSave(int shotInput, Goalkeeper goalkeeper) {
-        if (shotInput == goalkeeper.randomGoalkeeperGuess() && shotInput < 7 && shotInput > 0) {
-            System.out.println("Hard luck! Your shot was saved by the keeper");
-        }
-        else { 
-            System.out.println("Amazing! You scored a goal!");
-        }
-    }
     //This method returns true if the goalkeeper saves a shot
     public Boolean saveShot() {
         return true;
