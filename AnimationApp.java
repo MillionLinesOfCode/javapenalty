@@ -10,11 +10,15 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.geometry.Pos;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
-
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.Group;
+import javafx.scene.text.Font;
 
 /*
 This is the AnimationApp class, which controls the entire application. 
@@ -166,28 +170,38 @@ public class AnimationApp extends Application{
    }
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Image bgImg = new Image("file:Background.jpg");
+		ImageView mv = new ImageView(bgImg);
+		mv.setFitWidth(700);
+		mv.setFitHeight(500);
+		Group bg = new Group();
+		bg.getChildren().addAll(mv);
 		BorderPane root = new BorderPane();
-		Label label1, label2;
 		HBox topLabel = new HBox();
 		HBox centreLabel = new HBox();
-		label1 = new Label("Welcome to the Penalty Shooutout Game!");
-		label2 = new Label("Enter your Name:");
+		Label label1 = new Label("Welcome to the Penalty Shooutout Game!");
+		Label label2 = new Label("Enter your Name: ");
+		label1.setFont(Font.font("Times New Roman", 24));
+		label1.setStyle("-fx-font-weight: bold");
+		//label1.setFill(Color.WHITE);
+		label2.setFont(Font.font("Castellar", 24));
+		label2.setStyle("-fx-font-weight: bold");
 		TextField name = new TextField("name");
 		topLabel.getChildren().add(label1);
 		centreLabel.getChildren().add(label2);
 		centreLabel.getChildren().add(name);
 		Button doneButton = new Button("Done");
 		centreLabel.getChildren().add(doneButton);
-		label1.setFont(Font.font("Times New Roman", 24));
-		label2.setFont(Font.font("Times New Roman", 24));
+		
 		topLabel.setAlignment(Pos.CENTER);
 		centreLabel.setAlignment(Pos.CENTER);
+		root.getChildren().add(bg);
 		
 		root.setTop(topLabel);
 		root.setCenter(centreLabel);
 		
-		//root.getChildren().add(doneButton);
-		Scene scene = new Scene(root, 600, 600);
+		
+		Scene scene = new Scene(root, 700, 500);
 		primaryStage.setTitle("Penalty Shootout Game");
 		primaryStage.setScene(scene);
 		primaryStage.show();
