@@ -17,9 +17,10 @@ public class Football {
 	}
 	// Methods
 	// This method checks if the ball hit the goalpost or not
-	public boolean hitsGoalpost(Goalpost goalpost){
-            return (location == goalpost.getLocation());
-        }
+        
+	//public boolean hitsGoalpost(Goalpost goalpost){
+          //  return (location == goalpost.getLocation());
+        //}
 	//This method checks if the goal was saved by the goal keeper
         public boolean SavedByGoalkeeper(Goalkeeper goalkeeper){
             return (location == goalkeeper.getLocation());
