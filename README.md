@@ -20,9 +20,13 @@ A simple football penalty shootout game written in the Java programming language
 2.Download all the .java files and put them all in the same directory.
 
 3.Proceed to compile the java files using`
+
 javac *.java`
+
 3.You should be clear to run the AnimationApp.java file using 
+
 `java AnimationApp`
+
 4.Try scoring some goals against some of the best goalkeepers in the world!.
 
 
