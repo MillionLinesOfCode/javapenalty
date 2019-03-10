@@ -1,13 +1,25 @@
 import java.util.Scanner;
+import java.util.Stack;
+
+import javax.swing.GroupLayout.Group;
+import javax.swing.text.html.ImageView;
+
+
 import java.util.Random;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.HPos;
@@ -21,7 +33,7 @@ import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-
+import com.sun.javafx.css.converters.URLConverter;
 
 
 
@@ -39,7 +51,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	private Label lblShotsMissed;
 	private Label lblShotCondition;
 	private Label lblFinalResult;
-
 	private Player player = new Player();
 	private Goalkeeper goalkeeper = new Goalkeeper();
 
@@ -84,9 +95,9 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 				player.setName("E.Hazard");
         		player.setNationality("Belgium");
 				window.setScene(sceneGoalkeeperSelection);
-
+				
 			// Goalkeeper Selection
-			} else if (btnClicked.getText().equals("D.de Gea")) {
+			} if (btnClicked.getText().equals("D.de Gea")) {
 				lblChosenPlayer.setText("The player you chose is " + player.getName() + ".");
 				lblChosenGoalkeeper.setText("The goalkeeper you chose is " + goalkeeper.getName() + ".");
 				window.setScene(sceneCheckGameStart);
@@ -439,6 +450,8 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridStartMenue.setVgap(40);
 	 	gridStartMenue.setHgap(10);
 		gridStartMenue.setPadding(new Insets(10,10,10,10));
+		BackgroundImage bi = new BackgroundImage(new Image("Background.jpg",1280,720,false,true),null,null,null,null);
+		gridStartMenue.setBackground(new Background(bi));
 
 		// Welcome Screen
 	 	Label lblWelcomeMessage = new Label("Welcome to the Penalty Shootout Game!");
@@ -603,11 +616,13 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 
 	  	// Game Start
-	  	GridPane gridGameStart = new GridPane();
-	  	gridGameStart.setAlignment(Pos.CENTER);
-		gridGameStart.setVgap(10);
-	 	gridGameStart.setHgap(10);
+	  	Pane gridGameStart = new Pane();
+	  	//gridGameStart.setAlignment(Pos.CENTER);
+		//gridGameStart.setVgap(10);
+	 	//gridGameStart.setHgap(10);
 		gridGameStart.setPadding(new Insets(10,10,10,10));
+		BackgroundImage MainBG = new BackgroundImage(new Image("MainBG.png",1280,720,false,true),null,null,null,null);
+		gridGameStart.setBackground(new Background(MainBG));
 
 		VBox boxShotNum = new VBox();
 		Label lblInstruction = new Label("Choose where to shoot.");
@@ -633,24 +648,44 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		boxScoreCounter.setSpacing(20);
 		boxScoreCounter.setAlignment(Pos.TOP_CENTER);
 
+		//StackPane xyz = new StackPane();
+		//Color transparent = new Color(1f,1f,1f,.5f);
 		Button one = new Button("1");
-		one.setPrefWidth(410);
-	  	one.setPrefHeight(200);
+		one.setOpacity(0.2);
+		one.setPrefWidth(200);
+	  	one.setPrefHeight(130);
+	  	one.setLayoutX(325);
+	    one.setLayoutY(125);
 	  	Button two = new Button("2");
-	  	two.setPrefWidth(410);
-	  	two.setPrefHeight(200);
+	  	two.setOpacity(0.2);
+	  	two.setPrefWidth(225);
+	  	two.setPrefHeight(130);
+	  	two.setLayoutX(525);
+	    two.setLayoutY(125);
 	  	Button three = new Button("3");
-	  	three.setPrefWidth(410);
-	  	three.setPrefHeight(200);
+	  	three.setOpacity(0.2);
+	  	three.setPrefWidth(200);
+	  	three.setPrefHeight(130);
+	  	three.setLayoutX(750);
+	    three.setLayoutY(125);
 	  	Button four = new Button("4");
-	  	four.setPrefWidth(410);
-	  	four.setPrefHeight(200);
+	  	four.setOpacity(0.2);
+	  	four.setPrefWidth(200);
+	  	four.setPrefHeight(130);
+	  	four.setLayoutX(325);
+	    four.setLayoutY(250);
 	  	Button five = new Button("5");
-	  	five.setPrefWidth(410);
-	  	five.setPrefHeight(200);
+	  	five.setOpacity(0.2);
+	  	five.setPrefWidth(225);
+	  	five.setPrefHeight(130);
+	  	five.setLayoutX(525);
+	    five.setLayoutY(250);
 	  	Button six = new Button("6");
-	  	six.setPrefWidth(410);
-	  	six.setPrefHeight(200);
+	  	six.setOpacity(0.2);
+	  	six.setPrefWidth(200);
+	  	six.setPrefHeight(130);
+	  	six.setLayoutX(750);
+	    six.setLayoutY(250);
 
 	  	one.setOnAction(this);
 	  	two.setOnAction(this);
@@ -658,8 +693,10 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	four.setOnAction(this);
 	  	five.setOnAction(this);
 	  	six.setOnAction(this);
+	  	
+	  	gridGameStart.getChildren().addAll(one,two,three,four,five,six);
 
-	  	gridGameStart.add(boxShotNum, 0, 0);
+	  	/*gridGameStart.add(boxShotNum, 0, 0);
 	  	gridGameStart.add(boxScoreCounter, 2, 0);
 	  	gridGameStart.add(one, 0, 1);
 	  	gridGameStart.add(two, 1, 1);
@@ -667,6 +704,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	gridGameStart.add(four, 0, 2);
 	  	gridGameStart.add(five, 1, 2);
 	  	gridGameStart.add(six, 2, 2);
+	  	*/
 
 	  	sceneGameStart = new Scene(gridGameStart, 1280, 720);	
 
