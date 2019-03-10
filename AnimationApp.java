@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 import javax.swing.GroupLayout.Group;
-import javax.swing.text.html.ImageView;
+
 
 
 import java.util.Random;
@@ -20,6 +20,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.HPos;
@@ -540,15 +541,15 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 
 		// Goalkeeper Selection
-		GridPane gridGoalkeeper = new GridPane();
-		gridGoalkeeper.setAlignment(Pos.CENTER);
-		gridGoalkeeper.setVgap(40);
-	 	gridGoalkeeper.setHgap(10);
+		Pane gridGoalkeeper = new Pane();
+		//gridGoalkeeper.setAlignment(Pos.CENTER);
+		//gridGoalkeeper.setVgap(40);
+	 	//gridGoalkeeper.setHgap(10);
 		gridGoalkeeper.setPadding(new Insets(10,10,10,10));
 
 	  	Label lblChooseGoalkeeper = new Label("Please choose your favourite goalkeeper to save the penalties.");
 	  	lblChooseGoalkeeper.setFont(Font.font("Arial", 30));
-	  	GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
+	  	//GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
 
 	  	VBox boxGoalkeeperSelection = new VBox();
 	  	boxGoalkeeperSelection.setSpacing(20);
@@ -557,14 +558,33 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	Button btnStegen = new Button("M.ter Stegen");
 	  	Button btnCourtois = new Button("T.Courtois");
 	  	Button btnNeuer = new Button("M.Neuer");
+	  	Image SpainFlag = new Image("SpainFlag.jpg");
+		ImageView Spain = new ImageView(SpainFlag);
+		Spain.setFitHeight(30);
+		Spain.setFitWidth(60);
+		Image ManchesterFlag = new Image("ManchesterFlag.PNG");
+		ImageView Manchester = new ImageView(ManchesterFlag);
+		Manchester.setFitHeight(30);
+		Manchester.setFitWidth(60);
 
+		HBox keeper1 = new HBox();
+		HBox keeper2 = new HBox();
+		HBox keeper3 = new HBox();
+		HBox keeper4 = new HBox();
+		HBox keeper5 = new HBox();
+		
+		keeper1.getChildren().addAll(Spain, btnGea, Manchester);
+		keeper1.setAlignment(Pos.CENTER);
+		
+		
 	  	btnGea.setOnAction(this);
 	  	btnOblak.setOnAction(this);
 	  	btnStegen.setOnAction(this);
 	  	btnCourtois.setOnAction(this);
 	  	btnNeuer.setOnAction(this);
-
-	  	boxGoalkeeperSelection.getChildren().add(btnGea);
+	  	
+	  	
+	  	boxGoalkeeperSelection.getChildren().add(keeper1);
 	  	btnGea.setPrefWidth(150);
 	  	btnGea.setPrefHeight(30);
 	  	boxGoalkeeperSelection.getChildren().add(btnOblak);
@@ -580,10 +600,14 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	btnNeuer.setPrefWidth(150);
 	  	btnNeuer.setPrefHeight(30);
 
-	  	boxGoalkeeperSelection.setAlignment(Pos.CENTER);
-
-	  	gridGoalkeeper.add(lblChooseGoalkeeper, 1, 0);
-		gridGoalkeeper.add(boxGoalkeeperSelection, 1, 1);
+	  	boxGoalkeeperSelection.setLayoutX(540);
+	  	boxGoalkeeperSelection.setLayoutY(300);
+	  	
+	  	lblChooseGoalkeeper.setLayoutX(250);
+	  	lblChooseGoalkeeper.setLayoutY(200);
+	  	
+	  	gridGoalkeeper.getChildren().add(lblChooseGoalkeeper);
+		gridGoalkeeper.getChildren().add(boxGoalkeeperSelection);
 
 	  	sceneGoalkeeperSelection = new Scene(gridGoalkeeper, 1280, 720);
 
@@ -623,6 +647,29 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridGameStart.setPadding(new Insets(10,10,10,10));
 		BackgroundImage MainBG = new BackgroundImage(new Image("MainBG.png",1280,720,false,true),null,null,null,null);
 		gridGameStart.setBackground(new Background(MainBG));
+		Image deGea = new Image("DeGeaStanding.png");
+		ImageView deGea_1 = new ImageView(deGea);
+		deGea_1.setFitHeight(200);
+        deGea_1.setFitWidth(100);
+        deGea_1.setLayoutX(585);
+        deGea_1.setLayoutY(175);
+        
+        Image Ronaldo = new Image("RonaldoStanding.png");
+		ImageView Ronaldo_1 = new ImageView(Ronaldo);
+		Ronaldo_1.setFitHeight(350);
+		Ronaldo_1.setFitWidth(200);
+		Ronaldo_1.setLayoutX(250);
+		Ronaldo_1.setLayoutY(300);
+		
+		Image football = new Image("Football.png");
+		ImageView Football = new ImageView(football);
+		Football.setFitHeight(50);
+		Football.setFitWidth(50);
+		Football.setLayoutX(595);
+		Football.setLayoutY(437);
+		Football.setOpacity(0.75);
+		
+        gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1,Football);
 
 		VBox boxShotNum = new VBox();
 		Label lblInstruction = new Label("Choose where to shoot.");
