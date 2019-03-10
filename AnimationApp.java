@@ -451,17 +451,30 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridStartMenue.setVgap(40);
 	 	gridStartMenue.setHgap(10);
 		gridStartMenue.setPadding(new Insets(10,10,10,10));
-		BackgroundImage bi = new BackgroundImage(new Image("Background.jpg",1280,720,false,true),null,null,null,null);
+		BackgroundImage bi = new BackgroundImage(new Image("Background2.jpg",1280,720,false,true),null,null,null,null);
 		gridStartMenue.setBackground(new Background(bi));
+		Image Textbg = new Image("TextBG.jpeg");
+		ImageView TextBG = new ImageView(Textbg);
+		TextBG.setFitHeight(40);
+		TextBG.setFitWidth(900);
+		TextBG.setOpacity(0.5);
+		ImageView TextBG1 = new ImageView(Textbg);
+		TextBG1.setFitHeight(40);
+		TextBG1.setFitWidth(900);
+		TextBG1.setOpacity(0.5);
+		ImageView TextBG2 = new ImageView(Textbg);
+		TextBG2.setFitHeight(40);
+		TextBG2.setFitWidth(900);
+		TextBG2.setOpacity(0.5);
 
 		// Welcome Screen
 	 	Label lblWelcomeMessage = new Label("Welcome to the Penalty Shootout Game!");
-	 	lblWelcomeMessage.setFont(Font.font("Arial", 30));
+	 	lblWelcomeMessage.setFont(Font.font("Algerian", 30));
 	 	GridPane.setHalignment(lblWelcomeMessage, HPos.CENTER);
 
 	 	HBox enterName = new HBox();
 	 	Label lblEnterName = new Label("Please enter your name: ");
-	 	lblEnterName.setFont(Font.font("Arial", 30));
+	 	lblEnterName.setFont(Font.font("Forte", 30));
 	 	tfName = new TextField();
 	  	tfName.setPrefWidth(150);
 	  	tfName.setPrefHeight(30);
@@ -475,8 +488,11 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	btnEnterName.setOnAction(this);
 	  	GridPane.setHalignment(btnEnterName, HPos.CENTER);
 
+	  	gridStartMenue.add(TextBG, 1, 0);
 	  	gridStartMenue.add(lblWelcomeMessage, 1, 0);
+	  	gridStartMenue.add(TextBG1, 1, 1);
 	  	gridStartMenue.add(enterName, 1, 1);
+	  	gridStartMenue.add(TextBG2, 1, 2);
 	  	gridStartMenue.add(btnEnterName, 1, 2);
 
 		sceneStartMenue = new Scene(gridStartMenue, 1280, 720);
@@ -490,6 +506,8 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridPlayer.setVgap(40);
 	 	gridPlayer.setHgap(10);
 		gridPlayer.setPadding(new Insets(10,10,10,10));
+		BackgroundImage bi1 = new BackgroundImage(new Image("Background3.jpg",1280,720,false,true),null,null,null,null);
+		gridPlayer.setBackground(new Background(bi1));
 
 		lblWelcomePlayer = new Label("");
 	  	lblWelcomePlayer.setFont(Font.font("Arial", 30));
@@ -534,6 +552,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridPlayer.add(lblWelcomePlayer, 1, 0);
 		gridPlayer.add(lblChoosePlayer, 1, 1);
 		gridPlayer.add(boxPlayerSelection, 1, 2);
+		
 
 		scenePlayerSelection = new Scene(gridPlayer, 1280, 720);
 
@@ -546,6 +565,8 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		//gridGoalkeeper.setVgap(40);
 	 	//gridGoalkeeper.setHgap(10);
 		gridGoalkeeper.setPadding(new Insets(10,10,10,10));
+		BackgroundImage bi2 = new BackgroundImage(new Image("Background3.jpg",1280,720,false,true),null,null,null,null);
+		gridGoalkeeper.setBackground(new Background(bi2));
 
 	  	Label lblChooseGoalkeeper = new Label("Please choose your favourite goalkeeper to save the penalties.");
 	  	lblChooseGoalkeeper.setFont(Font.font("Arial", 30));
@@ -553,11 +574,9 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 	  	VBox boxGoalkeeperSelection = new VBox();
 	  	boxGoalkeeperSelection.setSpacing(20);
+	  	
+	  	//DeGea
 	  	Button btnGea = new Button("D.de Gea");
-	  	Button btnOblak = new Button("J.Oblak");
-	  	Button btnStegen = new Button("M.ter Stegen");
-	  	Button btnCourtois = new Button("T.Courtois");
-	  	Button btnNeuer = new Button("M.Neuer");
 	  	Image SpainFlag = new Image("SpainFlag.jpg");
 		ImageView Spain = new ImageView(SpainFlag);
 		Spain.setFitHeight(30);
@@ -566,6 +585,50 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		ImageView Manchester = new ImageView(ManchesterFlag);
 		Manchester.setFitHeight(30);
 		Manchester.setFitWidth(60);
+		
+		//Jan Oblak
+		Button btnOblak = new Button("J.Oblak");
+		Image SloveniaFlag = new Image("SloveniaFlag.png");
+		ImageView Slovenia = new ImageView(SloveniaFlag);
+		Slovenia.setFitHeight(30);
+		Slovenia.setFitWidth(60);
+		Image AtleticoFlag = new Image("AtleticoFlag.jpg");
+		ImageView Atletico = new ImageView(AtleticoFlag);
+		Atletico.setFitHeight(30);
+		Atletico.setFitWidth(60);
+		
+		//M.ter Stegen
+		Button btnStegen = new Button("M.ter Stegen");
+		Image GermanyFlag = new Image("GermanyFlag.png");
+		ImageView Germany = new ImageView(GermanyFlag);
+		Germany.setFitHeight(30);
+		Germany.setFitWidth(60);
+		Image barca = new Image("BarcelonaFlag.png");
+		ImageView Barca = new ImageView(barca);
+		Barca.setFitHeight(30);
+		Barca.setFitWidth(60);
+		
+		//T.Courtois		
+	  	Button btnCourtois = new Button("T.Courtois");
+	  	Image BelgiumFlag = new Image("BelgiumFlag.png");
+		ImageView Belgium = new ImageView(BelgiumFlag);
+		Belgium.setFitHeight(30);
+		Belgium.setFitWidth(60);
+		Image real = new Image("RealFlag.png");
+		ImageView Real = new ImageView(real);
+		Real.setFitHeight(30);
+		Real.setFitWidth(60);
+		
+		//M.Neuer	  	
+	  	Button btnNeuer = new Button("M.Neuer");
+	  	Image GermanyFlag1 = new Image("GermanyFlag.png");
+		ImageView Germany1 = new ImageView(GermanyFlag1);
+		Germany1.setFitHeight(30);
+		Germany1.setFitWidth(60);
+		Image bayern = new Image("BayernFlag.jpg");
+		ImageView Bayern = new ImageView(bayern);
+		Bayern.setFitHeight(30);
+		Bayern.setFitWidth(60);
 
 		HBox keeper1 = new HBox();
 		HBox keeper2 = new HBox();
@@ -574,7 +637,10 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		HBox keeper5 = new HBox();
 		
 		keeper1.getChildren().addAll(Spain, btnGea, Manchester);
-		keeper1.setAlignment(Pos.CENTER);
+		keeper2.getChildren().addAll(Slovenia, btnOblak, Atletico);
+		keeper3.getChildren().addAll(Germany, btnStegen, Barca);
+		keeper4.getChildren().addAll(Belgium, btnCourtois, Real);
+		keeper5.getChildren().addAll(Germany1, btnNeuer, Bayern);
 		
 		
 	  	btnGea.setOnAction(this);
@@ -587,20 +653,20 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	boxGoalkeeperSelection.getChildren().add(keeper1);
 	  	btnGea.setPrefWidth(150);
 	  	btnGea.setPrefHeight(30);
-	  	boxGoalkeeperSelection.getChildren().add(btnOblak);
+	  	boxGoalkeeperSelection.getChildren().add(keeper2);
 	  	btnOblak.setPrefWidth(150);
 	  	btnOblak.setPrefHeight(30);
-	  	boxGoalkeeperSelection.getChildren().add(btnStegen);
+	  	boxGoalkeeperSelection.getChildren().add(keeper3);
 	  	btnStegen.setPrefWidth(150);
 	  	btnStegen.setPrefHeight(30);
-	  	boxGoalkeeperSelection.getChildren().add(btnCourtois);
+	  	boxGoalkeeperSelection.getChildren().add(keeper4);
 	  	btnCourtois.setPrefWidth(150);
 	  	btnCourtois.setPrefHeight(30);
-	  	boxGoalkeeperSelection.getChildren().add(btnNeuer);
+	  	boxGoalkeeperSelection.getChildren().add(keeper5);
 	  	btnNeuer.setPrefWidth(150);
 	  	btnNeuer.setPrefHeight(30);
 
-	  	boxGoalkeeperSelection.setLayoutX(540);
+	  	boxGoalkeeperSelection.setLayoutX(520);
 	  	boxGoalkeeperSelection.setLayoutY(300);
 	  	
 	  	lblChooseGoalkeeper.setLayoutX(250);
@@ -628,6 +694,8 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	btnGameStart.setPrefWidth(150);
 	  	btnGameStart.setPrefHeight(40);
 	  	btnGameStart.setOnAction(this);
+	  	BackgroundImage bi3 = new BackgroundImage(new Image("Background1.jpg",1280,720,false,true),null,null,null,null);
+		checkGameStart.setBackground(new Background(bi3));
 
 	  	checkGameStart.setAlignment(Pos.CENTER);
 
