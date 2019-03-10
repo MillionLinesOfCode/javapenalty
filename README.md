@@ -30,3 +30,8 @@ Proceed to run the AnimationApp.java file using "java AnimationApp" and play.
 * Shehzan Udani
 * Renji Takeda
 * Ranadip Chatterjee
+
+# Acknowledgments
+* Our Professor and Teaching Assistant who provided invaluable help and feedback throughout the project.
+* Sergio Ramos for showing us how to take penalties under extreme pressure.
+
