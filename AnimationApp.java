@@ -508,7 +508,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridPlayer.setPadding(new Insets(10,10,10,10));
 		BackgroundImage bi1 = new BackgroundImage(new Image("Background3.jpg",1280,720,false,true),null,null,null,null);
 		gridPlayer.setBackground(new Background(bi1));
-
 		lblWelcomePlayer = new Label("");
 	  	lblWelcomePlayer.setFont(Font.font("Arial", 30));
 	  	//GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
@@ -570,7 +569,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		Chelsea.setFitHeight(30);
 		Chelsea.setFitWidth(60);
                 
-                HBox player1 = new HBox();
+        HBox player1 = new HBox();
 		HBox player2 = new HBox();
 		HBox player3 = new HBox();
 		HBox player4 = new HBox();
@@ -616,11 +615,26 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	lblChoosePlayer.setLayoutX(320);
 	  	lblChoosePlayer.setLayoutY(200);
                 
-                lblWelcomePlayer.setLayoutX(500);
+        lblWelcomePlayer.setLayoutX(500);
 	  	lblWelcomePlayer.setLayoutY(125);
 	  	
+	  	ImageView TextBG4 = new ImageView(Textbg);
+		TextBG4.setFitHeight(40);
+		TextBG4.setFitWidth(1280);
+		TextBG4.setOpacity(0.5);
+	  	TextBG4.setLayoutX(0);
+	  	TextBG4.setLayoutY(125);
+	  	
+	  	ImageView TextBG5 = new ImageView(Textbg);
+		TextBG5.setFitHeight(40);
+		TextBG5.setFitWidth(1280);
+		TextBG5.setOpacity(0.5);
+	  	TextBG5.setLayoutX(0);
+	  	TextBG5.setLayoutY(200);
+	  	
+	  	gridPlayer.getChildren().addAll(TextBG4, TextBG5);
 	  	gridPlayer.getChildren().add(lblChoosePlayer);
-                gridPlayer.getChildren().add(lblWelcomePlayer);
+        gridPlayer.getChildren().add(lblWelcomePlayer);
 		gridPlayer.getChildren().add(boxPlayerSelection);
 
 		scenePlayerSelection = new Scene(gridPlayer, 1280, 720);
@@ -738,6 +752,14 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	lblChooseGoalkeeper.setLayoutX(250);
 	  	lblChooseGoalkeeper.setLayoutY(200);
 	  	
+	  	ImageView TextBG6 = new ImageView(Textbg);
+		TextBG6.setFitHeight(40);
+		TextBG6.setFitWidth(1280);
+		TextBG6.setOpacity(0.5);
+	  	TextBG6.setLayoutX(0);
+	  	TextBG6.setLayoutY(200);
+
+	  	gridGoalkeeper.getChildren().add(TextBG6);
 	  	gridGoalkeeper.getChildren().add(lblChooseGoalkeeper);
 		gridGoalkeeper.getChildren().add(boxGoalkeeperSelection);
 
@@ -747,24 +769,46 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 
 	  	// Check Game Start
-	  	VBox checkGameStart = new VBox();
-	  	checkGameStart.setSpacing(30);
+	  	Pane checkGameStart = new Pane();
+	  	//checkGameStart.setSpacing(30);
 
 	  	lblChosenPlayer = new Label("");
 	  	lblChosenPlayer.setFont(Font.font("Arial", 30));
+	  	lblChosenPlayer.setLayoutX((1280/4)+75);
+	  	lblChosenPlayer.setLayoutY(275);
 
 	  	lblChosenGoalkeeper = new Label("");
 	  	lblChosenGoalkeeper.setFont(Font.font("Arial", 30));
+	  	lblChosenGoalkeeper.setLayoutX((1280/4)+75);
+	  	lblChosenGoalkeeper.setLayoutY(345);
 
 	  	Button btnGameStart = new Button("Start Game");
 	  	btnGameStart.setPrefWidth(150);
 	  	btnGameStart.setPrefHeight(40);
 	  	btnGameStart.setOnAction(this);
+	  	btnGameStart.setLayoutX(600);
+	  	btnGameStart.setLayoutY(390);
+	  	
 	  	BackgroundImage bi3 = new BackgroundImage(new Image("Background1.jpg",1280,720,false,true),null,null,null,null);
 		checkGameStart.setBackground(new Background(bi3));
 
-	  	checkGameStart.setAlignment(Pos.CENTER);
+	  	//checkGameStart.setAlignment(Pos.CENTER);
 
+	  	ImageView TextBG7 = new ImageView(Textbg);
+		TextBG7.setFitHeight(40);
+		TextBG7.setFitWidth(1280);
+		TextBG7.setOpacity(0.5);
+	  	TextBG7.setLayoutX(0);
+	  	TextBG7.setLayoutY(275);
+	  	
+	  	ImageView TextBG8 = new ImageView(Textbg);
+		TextBG8.setFitHeight(40);
+		TextBG8.setFitWidth(1280);
+		TextBG8.setOpacity(0.5);
+	  	TextBG8.setLayoutX(0);
+	  	TextBG8.setLayoutY(345);
+	  	
+	  	checkGameStart.getChildren().addAll(TextBG7,TextBG8);
 	  	checkGameStart.getChildren().add(lblChosenPlayer);
 	  	checkGameStart.getChildren().add(lblChosenGoalkeeper);
 	  	checkGameStart.getChildren().add(btnGameStart);
@@ -888,9 +932,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	*/
 
 	  	sceneGameStart = new Scene(gridGameStart, 1280, 720);	
-
-
-
+		
 	  	// AfterShot Screen
 	  	VBox boxAfterShot = new VBox();
 	  	lblShotCondition = new Label("");
@@ -906,9 +948,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 	  	sceneAfterShot = new Scene(boxAfterShot, 1280, 720);
 
-
-
-
 	  	// Final Screen
 	  	VBox boxFinalScreen = new VBox();
 	  	lblFinalResult = new Label("");
@@ -923,8 +962,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	boxFinalScreen.setSpacing(20);
 
 	  	sceneFinalScreen = new Scene(boxFinalScreen, 1280, 720);
-
-
 
 	  	// Initialize
       	window.setTitle("Penalty Shootout");
