@@ -501,58 +501,127 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 
 		// Player Selection
-		GridPane gridPlayer = new GridPane();
-		gridPlayer.setAlignment(Pos.CENTER);
-		gridPlayer.setVgap(40);
-	 	gridPlayer.setHgap(10);
+		Pane gridPlayer = new Pane();
+		//gridPlayer.setHalignment(Pos.CENTER);
+		//gridPlayer.setVgap(40);
+	 	//gridPlayer.setHgap(10);
 		gridPlayer.setPadding(new Insets(10,10,10,10));
 		BackgroundImage bi1 = new BackgroundImage(new Image("Background3.jpg",1280,720,false,true),null,null,null,null);
 		gridPlayer.setBackground(new Background(bi1));
 
 		lblWelcomePlayer = new Label("");
 	  	lblWelcomePlayer.setFont(Font.font("Arial", 30));
-	  	GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
+	  	//GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
 
 	  	Label lblChoosePlayer = new Label("Please choose your player to take the penalties.");
 	  	lblChoosePlayer.setFont(Font.font("Arial", 30));
-	  	GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
+                //GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
 
 	  	VBox boxPlayerSelection = new VBox();
 	  	boxPlayerSelection.setSpacing(20);
+                
 	  	Button btnRonaldo = new Button("C.Ronaldo");
+                Image PortugalFlag = new Image("PortugalFlag.png");
+		ImageView Portugal = new ImageView(PortugalFlag);
+		Portugal.setFitHeight(30);
+		Portugal.setFitWidth(60);
+                Image JuventusFlag = new Image("JuventusFlag.png");
+		ImageView Juventus = new ImageView(JuventusFlag);
+		Juventus.setFitHeight(30);
+		Juventus.setFitWidth(60);
+                
 	  	Button btnMessi = new Button("L.Messi");
+                Image ArgentinaFlag = new Image("ArgentinaFlag.png");
+		ImageView Argentina = new ImageView(ArgentinaFlag);
+		Argentina.setFitHeight(30);
+		Argentina.setFitWidth(60);
+                Image BarcelonaFlag = new Image("BarcelonaFlag.PNG");
+		ImageView Barcelona = new ImageView(BarcelonaFlag);
+		Barcelona.setFitHeight(30);
+		Barcelona.setFitWidth(60);
+                
 	  	Button btnPogba = new Button("P.Pogba");
+                Image FranceFlag = new Image("FranceFlag.jpg");
+		ImageView France = new ImageView(FranceFlag);
+		France.setFitHeight(30);
+		France.setFitWidth(60);
+                Image ManchesterFlag = new Image("ManchesterFlag.PNG");
+		ImageView Manchester3 = new ImageView(ManchesterFlag);
+		Manchester3.setFitHeight(30);
+		Manchester3.setFitWidth(60);
+                
 	  	Button btnNeymar = new Button("Neymar");
+                Image BrazilFlag = new Image("BrazilFlag.png");
+		ImageView Brazil = new ImageView(BrazilFlag);
+		Brazil.setFitHeight(30);
+		Brazil.setFitWidth(60);
+                Image PsgFlag = new Image("PSGFlag.png");
+		ImageView Psg = new ImageView(PsgFlag);
+		Psg.setFitHeight(30);
+		Psg.setFitWidth(60);
+                
 	  	Button btnHazard = new Button("E.Hazard");
-
+                Image BelgiumFlag = new Image("BelgiumFlag.png");
+		ImageView Belgium1 = new ImageView(BelgiumFlag);
+		Belgium1.setFitHeight(30);
+		Belgium1.setFitWidth(60);
+		Image ChelseaFlag = new Image("ChelseaFlag.png");
+		ImageView Chelsea = new ImageView(ChelseaFlag);
+		Chelsea.setFitHeight(30);
+		Chelsea.setFitWidth(60);
+                
+                HBox player1 = new HBox();
+		HBox player2 = new HBox();
+		HBox player3 = new HBox();
+		HBox player4 = new HBox();
+		HBox player5 = new HBox();
+		
+		player1.getChildren().addAll(Portugal, btnRonaldo, Juventus);
+		player2.getChildren().addAll(Argentina, btnMessi, Barcelona);
+		player3.getChildren().addAll(France, btnPogba, Manchester3);
+		player4.getChildren().addAll(Brazil, btnNeymar, Psg);
+		player5.getChildren().addAll(Belgium1, btnHazard, Chelsea);
+                
 	  	btnRonaldo.setOnAction(this);
 	  	btnMessi.setOnAction(this);
 	  	btnPogba.setOnAction(this);
 	  	btnNeymar.setOnAction(this);
 	  	btnHazard.setOnAction(this);
 
-	  	boxPlayerSelection.getChildren().add(btnRonaldo);
+	  	boxPlayerSelection.getChildren().add(player1);
 	  	btnRonaldo.setPrefWidth(150);
 	  	btnRonaldo.setPrefHeight(30);
-	  	boxPlayerSelection.getChildren().add(btnMessi);
+	  	boxPlayerSelection.getChildren().add(player2);
 	  	btnMessi.setPrefWidth(150);
 	  	btnMessi.setPrefHeight(30);
-	  	boxPlayerSelection.getChildren().add(btnPogba);
+	  	boxPlayerSelection.getChildren().add(player3);
 	  	btnPogba.setPrefWidth(150);
 	  	btnPogba.setPrefHeight(30);
-	  	boxPlayerSelection.getChildren().add(btnNeymar);
+	  	boxPlayerSelection.getChildren().add(player4);
 	  	btnNeymar.setPrefWidth(150);
 	  	btnNeymar.setPrefHeight(30);
-	  	boxPlayerSelection.getChildren().add(btnHazard);
+	  	boxPlayerSelection.getChildren().add(player5);
 	  	btnHazard.setPrefWidth(150);
 	  	btnHazard.setPrefHeight(30);
 
-	  	boxPlayerSelection.setAlignment(Pos.CENTER);
+	  	//boxPlayerSelection.setAlignment(Pos.CENTER);
 
-		gridPlayer.add(lblWelcomePlayer, 1, 0);
-		gridPlayer.add(lblChoosePlayer, 1, 1);
-		gridPlayer.add(boxPlayerSelection, 1, 2);
+		//gridPlayer.add(lblWelcomePlayer, 1, 0);
+		//gridPlayer.add(lblChoosePlayer, 1, 1);
+		//gridPlayer.add(boxPlayerSelection, 1, 2);
 		
+	  	boxPlayerSelection.setLayoutX(520);
+	  	boxPlayerSelection.setLayoutY(300);
+	  	
+	  	lblChoosePlayer.setLayoutX(320);
+	  	lblChoosePlayer.setLayoutY(200);
+                
+                lblWelcomePlayer.setLayoutX(500);
+	  	lblWelcomePlayer.setLayoutY(125);
+	  	
+	  	gridPlayer.getChildren().add(lblChoosePlayer);
+                gridPlayer.getChildren().add(lblWelcomePlayer);
+		gridPlayer.getChildren().add(boxPlayerSelection);
 
 		scenePlayerSelection = new Scene(gridPlayer, 1280, 720);
 
@@ -580,8 +649,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	Image SpainFlag = new Image("SpainFlag.jpg");
 		ImageView Spain = new ImageView(SpainFlag);
 		Spain.setFitHeight(30);
-		Spain.setFitWidth(60);
-		Image ManchesterFlag = new Image("ManchesterFlag.PNG");
+		Spain.setFitWidth(60);		
 		ImageView Manchester = new ImageView(ManchesterFlag);
 		Manchester.setFitHeight(30);
 		Manchester.setFitWidth(60);
@@ -603,14 +671,12 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		ImageView Germany = new ImageView(GermanyFlag);
 		Germany.setFitHeight(30);
 		Germany.setFitWidth(60);
-		Image barca = new Image("BarcelonaFlag.png");
-		ImageView Barca = new ImageView(barca);
-		Barca.setFitHeight(30);
-		Barca.setFitWidth(60);
+		ImageView Barcelona1 = new ImageView(BarcelonaFlag);
+		Barcelona1.setFitHeight(30);
+		Barcelona1.setFitWidth(60);
 		
 		//T.Courtois		
 	  	Button btnCourtois = new Button("T.Courtois");
-	  	Image BelgiumFlag = new Image("BelgiumFlag.png");
 		ImageView Belgium = new ImageView(BelgiumFlag);
 		Belgium.setFitHeight(30);
 		Belgium.setFitWidth(60);
@@ -638,7 +704,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		
 		keeper1.getChildren().addAll(Spain, btnGea, Manchester);
 		keeper2.getChildren().addAll(Slovenia, btnOblak, Atletico);
-		keeper3.getChildren().addAll(Germany, btnStegen, Barca);
+		keeper3.getChildren().addAll(Germany, btnStegen, Barcelona1);
 		keeper4.getChildren().addAll(Belgium, btnCourtois, Real);
 		keeper5.getChildren().addAll(Germany1, btnNeuer, Bayern);
 		
@@ -718,9 +784,9 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		Image deGea = new Image("DeGeaStanding.png");
 		ImageView deGea_1 = new ImageView(deGea);
 		deGea_1.setFitHeight(200);
-        deGea_1.setFitWidth(100);
-        deGea_1.setLayoutX(585);
-        deGea_1.setLayoutY(175);
+                deGea_1.setFitWidth(100);
+                deGea_1.setLayoutX(585);
+                deGea_1.setLayoutY(175);
         
         Image Ronaldo = new Image("RonaldoStanding.png");
 		ImageView Ronaldo_1 = new ImageView(Ronaldo);
