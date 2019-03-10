@@ -13,7 +13,7 @@ A simple football penalty shootout game written in the Java programming language
 
 5.The player will get a total of 5 chances to score(or miss!).
 
-# How to run it
+# Installing 
 
 1.To run the program, first check that you are on the Demo-2-Official branch. If not, switch to this branch. 
 
