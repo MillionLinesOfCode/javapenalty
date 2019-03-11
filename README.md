@@ -1,4 +1,4 @@
-![alt text](https://i.ytimg.com/vi/uZsnr4No36I/maxresdefault.jpg)
+![alt text](https://i.pinimg.com/originals/56/80/2f/56802fe445b0c25a2a43cd9f10cc4933.jpg)
 # javapenalty
 A simple football penalty shootout game written in the Java programming language.
 
