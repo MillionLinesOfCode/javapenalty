@@ -54,6 +54,9 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	private Label lblFinalResult;
 	private Player player = new Player();
 	private Goalkeeper goalkeeper = new Goalkeeper();
+        private Pane gridGameStart;
+        private Button bhdhud, bhdhud1, bhdhud2;
+       private ImageView deGeaS1, deGeaRight, RonaldoShooting, deGeaS2, RonaldoShooting1, RonaldoShooting2, deGeaS3, Football1, Football2;
 
 	int shotNumCounter = 1;
 
@@ -78,7 +81,437 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 				window.setScene(scenePlayerSelection);
 
 			// Player Selection
-			} else if (btnClicked.getText().equals("C.Ronaldo")) {
+			} else if (btnClicked.getText().equals("Budh")) {
+                            gridGameStart.setPadding(new Insets(10,10,10,10));
+		BackgroundImage MainBG = new BackgroundImage(new Image("MainBG.png",1280,720,false,true),null,null,null,null);
+		gridGameStart.setBackground(new Background(MainBG));
+                
+		Image deGea = new Image("DeGeaStanding.png");
+		ImageView deGea_1 = new ImageView(deGea);
+		deGea_1.setFitHeight(200);
+                deGea_1.setFitWidth(100);
+                deGea_1.setLayoutX(585);
+                deGea_1.setLayoutY(175);
+        
+                Image Ronaldo = new Image("RonaldoStanding.png");
+		ImageView Ronaldo_1 = new ImageView(Ronaldo);
+		Ronaldo_1.setFitHeight(350);
+		Ronaldo_1.setFitWidth(200);
+		Ronaldo_1.setLayoutX(250);
+		Ronaldo_1.setLayoutY(300);
+		
+		Image football = new Image("Football.png");
+		ImageView Football = new ImageView(football);
+		Football.setFitHeight(50);
+		Football.setFitWidth(50);
+		Football.setLayoutX(595);
+		Football.setLayoutY(437);
+		Football.setOpacity(0.75);
+		
+                gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1, Football);
+                //gridGameStart.getChildren().remove(bhdhud);
+                gridGameStart.getChildren().clear();
+                gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1, Football);
+                        //;(bhdhud, deGeaS1, deGeaRight, RonaldoShooting, deGeaS2, RonaldoShooting1, RonaldoShooting2, deGeaS3, Football1, Football2);
+                
+                
+		VBox boxShotNum = new VBox();
+		Label lblInstruction = new Label("Choose where to shoot.");
+		lblInstruction.setFont(Font.font("Arial", 30));
+		lblShotNum = new Label("Shot Number : " + shotNumCounter);
+		lblShotNum.setFont(Font.font("Arial", 30));
+		Label lblWhiteSpace = new Label("");
+		lblWhiteSpace.setFont(Font.font("Arial", 30));
+		boxShotNum.getChildren().add(lblInstruction);
+		boxShotNum.getChildren().add(lblShotNum);
+		boxShotNum.getChildren().add(lblWhiteSpace);
+		boxShotNum.setSpacing(20);
+		boxShotNum.setAlignment(Pos.TOP_CENTER);
+
+		VBox boxScoreCounter = new VBox();
+		lblShotsMade = new Label("Shots Made: " + player.getPlayerScore());
+		lblShotsMade.setFont(Font.font("Arial", 30));
+		lblShotsMissed = new Label("Shots Missed : " + goalkeeper.getGoalkeeperScore());
+		lblShotsMissed.setFont(Font.font("Arial", 30));
+		boxScoreCounter.getChildren().add(lblShotsMade);
+		boxScoreCounter.getChildren().add(lblShotsMissed);
+		boxScoreCounter.getChildren().add(lblWhiteSpace);
+		boxScoreCounter.setSpacing(20);
+		boxScoreCounter.setAlignment(Pos.TOP_CENTER);
+
+		//StackPane xyz = new StackPane();
+		//Color transparent = new Color(1f,1f,1f,.5f);
+		Button one = new Button("1");
+		one.setOpacity(0.2);
+		one.setPrefWidth(200);
+	  	one.setPrefHeight(130);
+	  	one.setLayoutX(325);
+	    one.setLayoutY(125);
+	  	Button two = new Button("2");
+	  	two.setOpacity(0.2);
+	  	two.setPrefWidth(225);
+	  	two.setPrefHeight(130);
+	  	two.setLayoutX(525);
+	    two.setLayoutY(125);
+	  	Button three = new Button("3");
+	  	three.setOpacity(0.2);
+	  	three.setPrefWidth(200);
+	  	three.setPrefHeight(130);
+	  	three.setLayoutX(750);
+	    three.setLayoutY(125);
+	  	Button four = new Button("4");
+	  	four.setOpacity(0.2);
+	  	four.setPrefWidth(200);
+	  	four.setPrefHeight(130);
+	  	four.setLayoutX(325);
+	    four.setLayoutY(250);
+	  	Button five = new Button("5");
+	  	five.setOpacity(0.2);
+	  	five.setPrefWidth(225);
+	  	five.setPrefHeight(130);
+	  	five.setLayoutX(525);
+	    five.setLayoutY(250);
+	  	Button six = new Button("6");
+	  	six.setOpacity(0.2);
+	  	six.setPrefWidth(200);
+	  	six.setPrefHeight(130);
+	  	six.setLayoutX(750);
+	    six.setLayoutY(250);
+
+	  	one.setOnAction(this);
+	  	two.setOnAction(this);
+	  	three.setOnAction(this);
+	  	four.setOnAction(this);
+	  	five.setOnAction(this);
+	  	six.setOnAction(this);
+	  	
+	  	gridGameStart.getChildren().addAll(one,two,three,four,five,six);
+                //gridGameStart.getChildren().removeAll(bhdhud, deGeaS1, deGeaRight, RonaldoShooting, deGeaS2, RonaldoShooting1, RonaldoShooting2, deGeaS3, Football1, Football2);
+                
+	  	/*gridGameStart.add(boxShotNum, 0, 0);
+	  	gridGameStart.add(boxScoreCounter, 2, 0);
+	  	gridGameStart.add(one, 0, 1);
+	  	gridGameStart.add(two, 1, 1);
+	  	gridGameStart.add(three, 2, 1);
+	  	gridGameStart.add(four, 0, 2);
+	  	gridGameStart.add(five, 1, 2);
+	  	gridGameStart.add(six, 2, 2);
+	  	*/
+               
+                /*
+                Image BG1 = new Image("MainBG.png");
+		ImageView BG = new ImageView(BG1);
+		BG.setFitHeight(720);
+                BG.setFitWidth(1280);
+                BG.setLayoutX(0);
+                BG.setLayoutY(0);
+                */
+                Image deGeaSave1 = new Image("DeGeaSave1.png");
+		ImageView deGeaS1 = new ImageView(deGeaSave1);
+		deGeaS1.setFitHeight(180);
+                deGeaS1.setFitWidth(275);
+                deGeaS1.setLayoutX(585);
+                deGeaS1.setLayoutY(175);
+                
+                Image RonaldoShooting1 = new Image("RonaldoShooting.png");
+		ImageView RonaldoShooting = new ImageView(RonaldoShooting1);
+		RonaldoShooting.setFitHeight(300);
+		RonaldoShooting.setFitWidth(215);
+		RonaldoShooting.setLayoutX(340);
+		RonaldoShooting.setLayoutY(240);
+                
+                //gridGameStart.getChildren().addAll(BG, deGeaS1, RonaldoShooting);
+                            window.setScene(sceneAfterShot);
+                        }
+                        else if (btnClicked.getText().equals("Clear")) {
+                            gridGameStart.setPadding(new Insets(10,10,10,10));
+                            BackgroundImage MainBG = new BackgroundImage(new Image("MainBG.png",1280,720,false,true),null,null,null,null);
+		gridGameStart.setBackground(new Background(MainBG));
+                
+		Image deGea = new Image("DeGeaStanding.png");
+		ImageView deGea_1 = new ImageView(deGea);
+		deGea_1.setFitHeight(200);
+                deGea_1.setFitWidth(100);
+                deGea_1.setLayoutX(585);
+                deGea_1.setLayoutY(175);
+        
+                Image Ronaldo = new Image("RonaldoStanding.png");
+		ImageView Ronaldo_1 = new ImageView(Ronaldo);
+		Ronaldo_1.setFitHeight(350);
+		Ronaldo_1.setFitWidth(200);
+		Ronaldo_1.setLayoutX(250);
+		Ronaldo_1.setLayoutY(300);
+		
+		Image football = new Image("Football.png");
+		ImageView Football = new ImageView(football);
+		Football.setFitHeight(50);
+		Football.setFitWidth(50);
+		Football.setLayoutX(595);
+		Football.setLayoutY(437);
+		Football.setOpacity(0.75);
+		
+                gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1, Football);
+                //gridGameStart.getChildren().remove(bhdhud);
+                gridGameStart.getChildren().clear();
+                gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1, Football);
+                        //;(bhdhud, deGeaS1, deGeaRight, RonaldoShooting, deGeaS2, RonaldoShooting1, RonaldoShooting2, deGeaS3, Football1, Football2);
+                
+
+                
+		VBox boxShotNum = new VBox();
+		Label lblInstruction = new Label("Choose where to shoot.");
+		lblInstruction.setFont(Font.font("Arial", 30));
+		lblShotNum = new Label("Shot Number : " + shotNumCounter);
+		lblShotNum.setFont(Font.font("Arial", 30));
+		Label lblWhiteSpace = new Label("");
+		lblWhiteSpace.setFont(Font.font("Arial", 30));
+		boxShotNum.getChildren().add(lblInstruction);
+		boxShotNum.getChildren().add(lblShotNum);
+		boxShotNum.getChildren().add(lblWhiteSpace);
+		boxShotNum.setSpacing(20);
+		boxShotNum.setAlignment(Pos.TOP_CENTER);
+
+		VBox boxScoreCounter = new VBox();
+		lblShotsMade = new Label("Shots Made: " + player.getPlayerScore());
+		lblShotsMade.setFont(Font.font("Arial", 30));
+		lblShotsMissed = new Label("Shots Missed : " + goalkeeper.getGoalkeeperScore());
+		lblShotsMissed.setFont(Font.font("Arial", 30));
+		boxScoreCounter.getChildren().add(lblShotsMade);
+		boxScoreCounter.getChildren().add(lblShotsMissed);
+		boxScoreCounter.getChildren().add(lblWhiteSpace);
+		boxScoreCounter.setSpacing(20);
+		boxScoreCounter.setAlignment(Pos.TOP_CENTER);
+
+		//StackPane xyz = new StackPane();
+		//Color transparent = new Color(1f,1f,1f,.5f);
+		Button one = new Button("1");
+		one.setOpacity(0.2);
+		one.setPrefWidth(200);
+	  	one.setPrefHeight(130);
+	  	one.setLayoutX(325);
+	    one.setLayoutY(125);
+	  	Button two = new Button("2");
+	  	two.setOpacity(0.2);
+	  	two.setPrefWidth(225);
+	  	two.setPrefHeight(130);
+	  	two.setLayoutX(525);
+	    two.setLayoutY(125);
+	  	Button three = new Button("3");
+	  	three.setOpacity(0.2);
+	  	three.setPrefWidth(200);
+	  	three.setPrefHeight(130);
+	  	three.setLayoutX(750);
+	    three.setLayoutY(125);
+	  	Button four = new Button("4");
+	  	four.setOpacity(0.2);
+	  	four.setPrefWidth(200);
+	  	four.setPrefHeight(130);
+	  	four.setLayoutX(325);
+	    four.setLayoutY(250);
+	  	Button five = new Button("5");
+	  	five.setOpacity(0.2);
+	  	five.setPrefWidth(225);
+	  	five.setPrefHeight(130);
+	  	five.setLayoutX(525);
+	    five.setLayoutY(250);
+	  	Button six = new Button("6");
+	  	six.setOpacity(0.2);
+	  	six.setPrefWidth(200);
+	  	six.setPrefHeight(130);
+	  	six.setLayoutX(750);
+	    six.setLayoutY(250);
+
+	  	one.setOnAction(this);
+	  	two.setOnAction(this);
+	  	three.setOnAction(this);
+	  	four.setOnAction(this);
+	  	five.setOnAction(this);
+	  	six.setOnAction(this);
+	  	
+	  	gridGameStart.getChildren().addAll(one,two,three,four,five,six);
+                //gridGameStart.getChildren().removeAll(bhdhud, deGeaS1, deGeaRight, RonaldoShooting, deGeaS2, RonaldoShooting1, RonaldoShooting2, deGeaS3, Football1, Football2);
+                
+	  	/*gridGameStart.add(boxShotNum, 0, 0);
+	  	gridGameStart.add(boxScoreCounter, 2, 0);
+	  	gridGameStart.add(one, 0, 1);
+	  	gridGameStart.add(two, 1, 1);
+	  	gridGameStart.add(three, 2, 1);
+	  	gridGameStart.add(four, 0, 2);
+	  	gridGameStart.add(five, 1, 2);
+	  	gridGameStart.add(six, 2, 2);
+	  	*/
+               
+                /*
+                Image BG1 = new Image("MainBG.png");
+		ImageView BG = new ImageView(BG1);
+		BG.setFitHeight(720);
+                BG.setFitWidth(1280);
+                BG.setLayoutX(0);
+                BG.setLayoutY(0);
+                */
+                Image deGeaSave1 = new Image("DeGeaSave1.png");
+		ImageView deGeaS1 = new ImageView(deGeaSave1);
+		deGeaS1.setFitHeight(180);
+                deGeaS1.setFitWidth(275);
+                deGeaS1.setLayoutX(585);
+                deGeaS1.setLayoutY(175);
+                
+                Image RonaldoShooting1 = new Image("RonaldoShooting.png");
+		ImageView RonaldoShooting = new ImageView(RonaldoShooting1);
+		RonaldoShooting.setFitHeight(300);
+		RonaldoShooting.setFitWidth(215);
+		RonaldoShooting.setLayoutX(340);
+		RonaldoShooting.setLayoutY(240);
+                
+                //gridGameStart.getChildren().addAll(BG, deGeaS1, RonaldoShooting);
+                            window.setScene(sceneAfterShot);
+                            }
+                        
+                        
+                        else if (btnClicked.getText().equals("Clear1")) {
+                            gridGameStart.setPadding(new Insets(10,10,10,10));
+                            BackgroundImage MainBG = new BackgroundImage(new Image("MainBG.png",1280,720,false,true),null,null,null,null);
+		gridGameStart.setBackground(new Background(MainBG));
+                
+		Image deGea = new Image("DeGeaStanding.png");
+		ImageView deGea_1 = new ImageView(deGea);
+		deGea_1.setFitHeight(200);
+                deGea_1.setFitWidth(100);
+                deGea_1.setLayoutX(585);
+                deGea_1.setLayoutY(175);
+        
+                Image Ronaldo = new Image("RonaldoStanding.png");
+		ImageView Ronaldo_1 = new ImageView(Ronaldo);
+		Ronaldo_1.setFitHeight(350);
+		Ronaldo_1.setFitWidth(200);
+		Ronaldo_1.setLayoutX(250);
+		Ronaldo_1.setLayoutY(300);
+		
+		Image football = new Image("Football.png");
+		ImageView Football = new ImageView(football);
+		Football.setFitHeight(50);
+		Football.setFitWidth(50);
+		Football.setLayoutX(595);
+		Football.setLayoutY(437);
+		Football.setOpacity(0.75);
+		
+                gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1, Football);
+                //gridGameStart.getChildren().remove(bhdhud);
+                gridGameStart.getChildren().clear();
+                gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1, Football);
+                        //;(bhdhud, deGeaS1, deGeaRight, RonaldoShooting, deGeaS2, RonaldoShooting1, RonaldoShooting2, deGeaS3, Football1, Football2);
+                
+                
+		VBox boxShotNum = new VBox();
+		Label lblInstruction = new Label("Choose where to shoot.");
+		lblInstruction.setFont(Font.font("Arial", 30));
+		lblShotNum = new Label("Shot Number : " + shotNumCounter);
+		lblShotNum.setFont(Font.font("Arial", 30));
+		Label lblWhiteSpace = new Label("");
+		lblWhiteSpace.setFont(Font.font("Arial", 30));
+		boxShotNum.getChildren().add(lblInstruction);
+		boxShotNum.getChildren().add(lblShotNum);
+		boxShotNum.getChildren().add(lblWhiteSpace);
+		boxShotNum.setSpacing(20);
+		boxShotNum.setAlignment(Pos.TOP_CENTER);
+
+		VBox boxScoreCounter = new VBox();
+		lblShotsMade = new Label("Shots Made: " + player.getPlayerScore());
+		lblShotsMade.setFont(Font.font("Arial", 30));
+		lblShotsMissed = new Label("Shots Missed : " + goalkeeper.getGoalkeeperScore());
+		lblShotsMissed.setFont(Font.font("Arial", 30));
+		boxScoreCounter.getChildren().add(lblShotsMade);
+		boxScoreCounter.getChildren().add(lblShotsMissed);
+		boxScoreCounter.getChildren().add(lblWhiteSpace);
+		boxScoreCounter.setSpacing(20);
+		boxScoreCounter.setAlignment(Pos.TOP_CENTER);
+
+		//StackPane xyz = new StackPane();
+		//Color transparent = new Color(1f,1f,1f,.5f);
+		Button one = new Button("1");
+		one.setOpacity(0.2);
+		one.setPrefWidth(200);
+	  	one.setPrefHeight(130);
+	  	one.setLayoutX(325);
+	    one.setLayoutY(125);
+	  	Button two = new Button("2");
+	  	two.setOpacity(0.2);
+	  	two.setPrefWidth(225);
+	  	two.setPrefHeight(130);
+	  	two.setLayoutX(525);
+	    two.setLayoutY(125);
+	  	Button three = new Button("3");
+	  	three.setOpacity(0.2);
+	  	three.setPrefWidth(200);
+	  	three.setPrefHeight(130);
+	  	three.setLayoutX(750);
+	    three.setLayoutY(125);
+	  	Button four = new Button("4");
+	  	four.setOpacity(0.2);
+	  	four.setPrefWidth(200);
+	  	four.setPrefHeight(130);
+	  	four.setLayoutX(325);
+	    four.setLayoutY(250);
+	  	Button five = new Button("5");
+	  	five.setOpacity(0.2);
+	  	five.setPrefWidth(225);
+	  	five.setPrefHeight(130);
+	  	five.setLayoutX(525);
+	    five.setLayoutY(250);
+	  	Button six = new Button("6");
+	  	six.setOpacity(0.2);
+	  	six.setPrefWidth(200);
+	  	six.setPrefHeight(130);
+	  	six.setLayoutX(750);
+	    six.setLayoutY(250);
+
+	  	one.setOnAction(this);
+	  	two.setOnAction(this);
+	  	three.setOnAction(this);
+	  	four.setOnAction(this);
+	  	five.setOnAction(this);
+	  	six.setOnAction(this);
+	  	
+	  	gridGameStart.getChildren().addAll(one,two,three,four,five,six);
+                //gridGameStart.getChildren().removeAll(bhdhud, deGeaS1, deGeaRight, RonaldoShooting, deGeaS2, RonaldoShooting1, RonaldoShooting2, deGeaS3, Football1, Football2);
+                
+	  	/*gridGameStart.add(boxShotNum, 0, 0);
+	  	gridGameStart.add(boxScoreCounter, 2, 0);
+	  	gridGameStart.add(one, 0, 1);
+	  	gridGameStart.add(two, 1, 1);
+	  	gridGameStart.add(three, 2, 1);
+	  	gridGameStart.add(four, 0, 2);
+	  	gridGameStart.add(five, 1, 2);
+	  	gridGameStart.add(six, 2, 2);
+	  	*/
+               
+                /*
+                Image BG1 = new Image("MainBG.png");
+		ImageView BG = new ImageView(BG1);
+		BG.setFitHeight(720);
+                BG.setFitWidth(1280);
+                BG.setLayoutX(0);
+                BG.setLayoutY(0);
+                */
+                Image deGeaSave1 = new Image("DeGeaSave1.png");
+		ImageView deGeaS1 = new ImageView(deGeaSave1);
+		deGeaS1.setFitHeight(180);
+                deGeaS1.setFitWidth(275);
+                deGeaS1.setLayoutX(585);
+                deGeaS1.setLayoutY(175);
+                
+                Image RonaldoShooting1 = new Image("RonaldoShooting.png");
+		ImageView RonaldoShooting = new ImageView(RonaldoShooting1);
+		RonaldoShooting.setFitHeight(300);
+		RonaldoShooting.setFitWidth(215);
+		RonaldoShooting.setLayoutX(340);
+		RonaldoShooting.setLayoutY(240);
+                
+                //gridGameStart.getChildren().addAll(BG, deGeaS1, RonaldoShooting);
+                            window.setScene(sceneAfterShot);
+                            }
+                        
+                        else if (btnClicked.getText().equals("C.Ronaldo")) {
 				window.setScene(sceneGoalkeeperSelection);
 			} else if (btnClicked.getText().equals("L.Messi")) {
 				player.setName("L.Messi");
@@ -130,24 +563,64 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 			// Game Start
 			} else if (btnClicked.getText().equals("Start Game")) {
 				window.setScene(sceneGameStart);
+                                
 			} else if (btnClicked.getText().equals("1")) {
+                                  Image BG3 = new Image("MainBG.png");
+                            ImageView BG2 = new ImageView(BG3);
+                            BG2.setFitHeight(720);
+                            BG2.setFitWidth(1280);
+                            BG2.setLayoutX(0);
+                            BG2.setLayoutY(0);
+                            
+                            Image deGeaSave3 = new Image("DeGeaLeft.png");
+		ImageView deGeaS3 = new ImageView(deGeaSave3);
+		deGeaS3.setFitHeight(155);
+                deGeaS3.setFitWidth(275);
+                deGeaS3.setLayoutX(405);
+                deGeaS3.setLayoutY(170);
+                
+                Image RonaldoShooting3 = new Image("RonaldoShooting.png");
+		ImageView RonaldoShooting2 = new ImageView(RonaldoShooting3);
+		RonaldoShooting2.setFitHeight(300);
+		RonaldoShooting2.setFitWidth(215);
+		RonaldoShooting2.setLayoutX(340);
+		RonaldoShooting2.setLayoutY(240);
+             
+                Image football2 = new Image("Football.png");
+		ImageView Football2 = new ImageView(football2);
+		Football2.setFitHeight(35);
+		Football2.setFitWidth(35);
+		Football2.setLayoutX(400);
+		Football2.setLayoutY(175);
+		Football2.setOpacity(0.75);
+                
+                            bhdhud2 = new Button("Clear");
+                            bhdhud2.setOnAction(this);
+                              	bhdhud2.setOpacity(0);
+                                bhdhud2.setPrefWidth(720);
+                                bhdhud2.setPrefHeight(1280);
+                                bhdhud2.setLayoutX(0);
+                                bhdhud2.setLayoutY(0);
+                                
+                            gridGameStart.getChildren().addAll(BG2, bhdhud2, deGeaS3, Football2, RonaldoShooting2);
+                            
 				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
 	            int playerStrength = player.randStrength();
 	            if (btnClicked.getText().equals(goalkeeperNum + "") && (playerStrength <= 74 || playerStrength >= 80)) {
 	           		lblShotCondition.setText("Shot was saved by the goalkeeper. Shot Missed.");
 	           		goalkeeper.setGoalkeeperScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") && (playerStrength >= 75 && playerStrength <= 79)) {
 	           		lblShotCondition.setText("Shot overpowered the goalkeeper. Goal!");
 	           		player.setPlayerScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 60 && playerStrength <= 79)) {
 	           		lblShotCondition.setText("Goal!!");
 	           		player.setPlayerScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 1 && playerStrength <= 59)) {
 	           		Random rand = new Random();
 					int n = rand.nextInt(2);
@@ -155,28 +628,28 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 						lblShotCondition.setText("The shot was too weak. Shot Missed.");
 						goalkeeper.setGoalkeeperScore(1);
 						shotNumCounter ++;
-						window.setScene(sceneAfterShot);
+						//window.setScene(sceneAfterShot);
 					} else {
 						lblShotCondition.setText("Goal!!");
 						player.setPlayerScore(1);
 						shotNumCounter ++;
-						window.setScene(sceneAfterShot);
+						//window.setScene(sceneAfterShot);
 					}
 	            } else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 80 && playerStrength <= 89)) {
 	            	lblShotCondition.setText("The ball hit the post. Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            } else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 90 && playerStrength <= 100)) {
 	            	lblShotCondition.setText("The shot was too strong and went outside the goal. Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            } else {
 	            	lblShotCondition.setText("Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            }
 			} else if (btnClicked.getText().equals("2")) {
 				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
@@ -227,23 +700,63 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	            	window.setScene(sceneAfterShot);
 	            }
 			} else if (btnClicked.getText().equals("3")) {
+                            //Pane gridGameStart = new Pane();
+                              Image BG1 = new Image("MainBG.png");
+                            ImageView BG = new ImageView(BG1);
+                            BG.setFitHeight(720);
+                            BG.setFitWidth(1280);
+                            BG.setLayoutX(0);
+                            BG.setLayoutY(0);
+                            
+                            Image deGeaSave1 = new Image("DeGeaRight.png");
+		ImageView deGeaS1 = new ImageView(deGeaSave1);
+		deGeaS1.setFitHeight(250);
+                deGeaS1.setFitWidth(225);
+                deGeaS1.setLayoutX(650);
+                deGeaS1.setLayoutY(140);
+                
+                Image RonaldoShooting1 = new Image("RonaldoShooting.png");
+		ImageView RonaldoShooting = new ImageView(RonaldoShooting1);
+		RonaldoShooting.setFitHeight(300);
+		RonaldoShooting.setFitWidth(215);
+		RonaldoShooting.setLayoutX(340);
+		RonaldoShooting.setLayoutY(240);
+             
+                Image football = new Image("Football.png");
+		ImageView Football = new ImageView(football);
+		Football.setFitHeight(35);
+		Football.setFitWidth(35);
+		Football.setLayoutX(850);
+		Football.setLayoutY(130);
+		Football.setOpacity(0.75);
+                
+                            bhdhud = new Button("Budh");
+                            bhdhud.setOpacity(0);
+                            bhdhud.setPrefWidth(720);
+                            bhdhud.setPrefHeight(1280);
+                            bhdhud.setLayoutX(0);
+                            bhdhud.setLayoutY(0);
+                            bhdhud.setOnAction(this);
+                            gridGameStart.getChildren().addAll(BG, bhdhud, deGeaS1, RonaldoShooting, Football);
+                            
+                            
 				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
 	            int playerStrength = player.randStrength();
 	            if (btnClicked.getText().equals(goalkeeperNum + "") && (playerStrength <= 74 || playerStrength >= 80)) {
 	           		lblShotCondition.setText("Shot was saved by the goalkeeper. Shot Missed.");
 	           		goalkeeper.setGoalkeeperScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") && (playerStrength >= 75 && playerStrength <= 79)) {
 	           		lblShotCondition.setText("Shot overpowered the goalkeeper. Goal!");
 	           		player.setPlayerScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 60 && playerStrength <= 79)) {
 	           		lblShotCondition.setText("Goal!!");
 	           		player.setPlayerScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 1 && playerStrength <= 59)) {
 	           		Random rand = new Random();
 					int n = rand.nextInt(2);
@@ -251,47 +764,87 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 						lblShotCondition.setText("The shot was too weak. Shot Missed.");
 						goalkeeper.setGoalkeeperScore(1);
 						shotNumCounter ++;
-						window.setScene(sceneAfterShot);
+						//window.setScene(sceneAfterShot);
 					} else {
 						lblShotCondition.setText("Goal!!");
 						player.setPlayerScore(1);
 						shotNumCounter ++;
-						window.setScene(sceneAfterShot);
+						//window.setScene(sceneAfterShot);
 					}
 	            } else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 80 && playerStrength <= 89)) {
 	            	lblShotCondition.setText("The ball hit the post. Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            } else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 90 && playerStrength <= 100)) {
 	            	lblShotCondition.setText("The shot was too strong and went outside the goal. Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            } else {
 	            	lblShotCondition.setText("Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            }
 			} else if (btnClicked.getText().equals("4")) {
+                            //Pane gridGameStart = new Pane();
+                              Image BG2 = new Image("MainBG.png");
+                            ImageView BG1 = new ImageView(BG2);
+                            BG1.setFitHeight(720);
+                            BG1.setFitWidth(1280);
+                            BG1.setLayoutX(0);
+                            BG1.setLayoutY(0);
+                            
+                            Image deGeaSave2 = new Image("DeGeaSave1.png");
+		ImageView deGeaS2 = new ImageView(deGeaSave2);
+		deGeaS2.setFitHeight(180);
+                deGeaS2.setFitWidth(290);
+                deGeaS2.setLayoutX(350);
+                deGeaS2.setLayoutY(190);
+                
+                Image RonaldoShooting2 = new Image("RonaldoShooting.png");
+		ImageView RonaldoShooting1 = new ImageView(RonaldoShooting2);
+		RonaldoShooting1.setFitHeight(300);
+		RonaldoShooting1.setFitWidth(215);
+		RonaldoShooting1.setLayoutX(340);
+		RonaldoShooting1.setLayoutY(240);
+             
+                Image football1 = new Image("Football.png");
+		ImageView Football1 = new ImageView(football1);
+		Football1.setFitHeight(35);
+		Football1.setFitWidth(35);
+		Football1.setLayoutX(335);
+		Football1.setLayoutY(300);
+		Football1.setOpacity(0.75);
+                
+                            bhdhud1 = new Button("Clear1");
+                            bhdhud1.setOnAction(this);
+                              	bhdhud1.setOpacity(0);
+                                bhdhud1.setPrefWidth(720);
+                                bhdhud1.setPrefHeight(1280);
+                                bhdhud1.setLayoutX(0);
+                                bhdhud1.setLayoutY(0);
+                            
+                            gridGameStart.getChildren().addAll(BG1, bhdhud1, deGeaS2, Football1, RonaldoShooting1);
+                                    
 				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
 	            int playerStrength = player.randStrength();
 	            if (btnClicked.getText().equals(goalkeeperNum + "") && (playerStrength <= 74 || playerStrength >= 80)) {
 	           		lblShotCondition.setText("Shot was saved by the goalkeeper. Shot Missed.");
 	           		goalkeeper.setGoalkeeperScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") && (playerStrength >= 75 && playerStrength <= 79)) {
 	           		lblShotCondition.setText("Shot overpowered the goalkeeper. Goal!");
 	           		player.setPlayerScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 60 && playerStrength <= 79)) {
 	           		lblShotCondition.setText("Goal!!");
 	           		player.setPlayerScore(1);
 	           		shotNumCounter ++;
-	           		window.setScene(sceneAfterShot);
+	           		//window.setScene(sceneAfterShot);
 	           	} else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 1 && playerStrength <= 59)) {
 	           		Random rand = new Random();
 					int n = rand.nextInt(2);
@@ -299,28 +852,28 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 						lblShotCondition.setText("The shot was too weak. Shot Missed.");
 						goalkeeper.setGoalkeeperScore(1);
 						shotNumCounter ++;
-						window.setScene(sceneAfterShot);
+						//window.setScene(sceneAfterShot);
 					} else {
 						lblShotCondition.setText("Goal!!");
 						player.setPlayerScore(1);
 						shotNumCounter ++;
-						window.setScene(sceneAfterShot);
+						//window.setScene(sceneAfterShot);
 					}
 	            } else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 80 && playerStrength <= 89)) {
 	            	lblShotCondition.setText("The ball hit the post. Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            } else if (btnClicked.getText().equals(goalkeeperNum + "") == false && (playerStrength >= 90 && playerStrength <= 100)) {
 	            	lblShotCondition.setText("The shot was too strong and went outside the goal. Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            } else {
 	            	lblShotCondition.setText("Shot Missed.");
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
-	            	window.setScene(sceneAfterShot);
+	            	//window.setScene(sceneAfterShot);
 	            }
 			} else if (btnClicked.getText().equals("5")) {
 				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
@@ -417,12 +970,14 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	            	goalkeeper.setGoalkeeperScore(1);
 	            	shotNumCounter ++;
 	            	window.setScene(sceneAfterShot);
-	            }
+	            } 
 			} else if (btnClicked.getText().equals("Back to Game")) {
+                            
 				lblShotNum.setText("Shot Number : " + shotNumCounter);
 				lblShotsMade.setText("Shots Made: " + player.getPlayerScore());
 				lblShotsMissed.setText("Shots Missed : " + goalkeeper.getGoalkeeperScore());
 				if (shotNumCounter < 6) {
+                                    
 					window.setScene(sceneGameStart);
 				} else {
 					if (player.getPlayerScore() > goalkeeper.getGoalkeeperScore()) {
@@ -430,6 +985,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
        				} else {
         				lblFinalResult.setText("Sorry. You Lost.");
        				}
+                                        
 					window.setScene(sceneFinalScreen);
 				}
 			
@@ -508,6 +1064,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridPlayer.setPadding(new Insets(10,10,10,10));
 		BackgroundImage bi1 = new BackgroundImage(new Image("Background3.jpg",1280,720,false,true),null,null,null,null);
 		gridPlayer.setBackground(new Background(bi1));
+
 		lblWelcomePlayer = new Label("");
 	  	lblWelcomePlayer.setFont(Font.font("Arial", 30));
 	  	//GridPane.setHalignment(lblWelcomePlayer, HPos.CENTER);
@@ -569,7 +1126,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		Chelsea.setFitHeight(30);
 		Chelsea.setFitWidth(60);
                 
-        HBox player1 = new HBox();
+                HBox player1 = new HBox();
 		HBox player2 = new HBox();
 		HBox player3 = new HBox();
 		HBox player4 = new HBox();
@@ -615,26 +1172,11 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	lblChoosePlayer.setLayoutX(320);
 	  	lblChoosePlayer.setLayoutY(200);
                 
-        lblWelcomePlayer.setLayoutX(500);
+                lblWelcomePlayer.setLayoutX(500);
 	  	lblWelcomePlayer.setLayoutY(125);
 	  	
-	  	ImageView TextBG4 = new ImageView(Textbg);
-		TextBG4.setFitHeight(40);
-		TextBG4.setFitWidth(1280);
-		TextBG4.setOpacity(0.5);
-	  	TextBG4.setLayoutX(0);
-	  	TextBG4.setLayoutY(125);
-	  	
-	  	ImageView TextBG5 = new ImageView(Textbg);
-		TextBG5.setFitHeight(40);
-		TextBG5.setFitWidth(1280);
-		TextBG5.setOpacity(0.5);
-	  	TextBG5.setLayoutX(0);
-	  	TextBG5.setLayoutY(200);
-	  	
-	  	gridPlayer.getChildren().addAll(TextBG4, TextBG5);
 	  	gridPlayer.getChildren().add(lblChoosePlayer);
-        gridPlayer.getChildren().add(lblWelcomePlayer);
+                gridPlayer.getChildren().add(lblWelcomePlayer);
 		gridPlayer.getChildren().add(boxPlayerSelection);
 
 		scenePlayerSelection = new Scene(gridPlayer, 1280, 720);
@@ -752,14 +1294,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	lblChooseGoalkeeper.setLayoutX(250);
 	  	lblChooseGoalkeeper.setLayoutY(200);
 	  	
-	  	ImageView TextBG6 = new ImageView(Textbg);
-		TextBG6.setFitHeight(40);
-		TextBG6.setFitWidth(1280);
-		TextBG6.setOpacity(0.5);
-	  	TextBG6.setLayoutX(0);
-	  	TextBG6.setLayoutY(200);
-
-	  	gridGoalkeeper.getChildren().add(TextBG6);
 	  	gridGoalkeeper.getChildren().add(lblChooseGoalkeeper);
 		gridGoalkeeper.getChildren().add(boxGoalkeeperSelection);
 
@@ -769,46 +1303,24 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 
 	  	// Check Game Start
-	  	Pane checkGameStart = new Pane();
-	  	//checkGameStart.setSpacing(30);
+	  	VBox checkGameStart = new VBox();
+	  	checkGameStart.setSpacing(30);
 
 	  	lblChosenPlayer = new Label("");
 	  	lblChosenPlayer.setFont(Font.font("Arial", 30));
-	  	lblChosenPlayer.setLayoutX((1280/4)+75);
-	  	lblChosenPlayer.setLayoutY(275);
 
 	  	lblChosenGoalkeeper = new Label("");
 	  	lblChosenGoalkeeper.setFont(Font.font("Arial", 30));
-	  	lblChosenGoalkeeper.setLayoutX((1280/4)+75);
-	  	lblChosenGoalkeeper.setLayoutY(345);
 
 	  	Button btnGameStart = new Button("Start Game");
 	  	btnGameStart.setPrefWidth(150);
 	  	btnGameStart.setPrefHeight(40);
 	  	btnGameStart.setOnAction(this);
-	  	btnGameStart.setLayoutX(600);
-	  	btnGameStart.setLayoutY(390);
-	  	
 	  	BackgroundImage bi3 = new BackgroundImage(new Image("Background1.jpg",1280,720,false,true),null,null,null,null);
 		checkGameStart.setBackground(new Background(bi3));
 
-	  	//checkGameStart.setAlignment(Pos.CENTER);
+	  	checkGameStart.setAlignment(Pos.CENTER);
 
-	  	ImageView TextBG7 = new ImageView(Textbg);
-		TextBG7.setFitHeight(40);
-		TextBG7.setFitWidth(1280);
-		TextBG7.setOpacity(0.5);
-	  	TextBG7.setLayoutX(0);
-	  	TextBG7.setLayoutY(275);
-	  	
-	  	ImageView TextBG8 = new ImageView(Textbg);
-		TextBG8.setFitHeight(40);
-		TextBG8.setFitWidth(1280);
-		TextBG8.setOpacity(0.5);
-	  	TextBG8.setLayoutX(0);
-	  	TextBG8.setLayoutY(345);
-	  	
-	  	checkGameStart.getChildren().addAll(TextBG7,TextBG8);
 	  	checkGameStart.getChildren().add(lblChosenPlayer);
 	  	checkGameStart.getChildren().add(lblChosenGoalkeeper);
 	  	checkGameStart.getChildren().add(btnGameStart);
@@ -818,7 +1330,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 
 	  	// Game Start
-	  	Pane gridGameStart = new Pane();
+	  	gridGameStart = new Pane();
 	  	//gridGameStart.setAlignment(Pos.CENTER);
 		//gridGameStart.setVgap(10);
 	 	//gridGameStart.setHgap(10);
@@ -832,23 +1344,23 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
                 deGea_1.setLayoutX(585);
                 deGea_1.setLayoutY(175);
         
-        Image Ronaldo = new Image("RonaldoStanding.png");
+                Image Ronaldo = new Image("RonaldoStanding.png");
 		ImageView Ronaldo_1 = new ImageView(Ronaldo);
 		Ronaldo_1.setFitHeight(350);
 		Ronaldo_1.setFitWidth(200);
 		Ronaldo_1.setLayoutX(250);
 		Ronaldo_1.setLayoutY(300);
 		
-		Image football = new Image("Football.png");
-		ImageView Football = new ImageView(football);
-		Football.setFitHeight(50);
-		Football.setFitWidth(50);
-		Football.setLayoutX(595);
-		Football.setLayoutY(437);
-		Football.setOpacity(0.75);
+                Image football1 = new Image("Football.png");
+		ImageView Football1 = new ImageView(football1);
+		Football1.setFitHeight(50);
+		Football1.setFitWidth(50);
+		Football1.setLayoutX(595);
+		Football1.setLayoutY(437);
+		Football1.setOpacity(0.75);
 		
-        gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1,Football);
-
+                gridGameStart.getChildren().addAll(deGea_1,Ronaldo_1,Football1);
+                
 		VBox boxShotNum = new VBox();
 		Label lblInstruction = new Label("Choose where to shoot.");
 		lblInstruction.setFont(Font.font("Arial", 30));
@@ -930,9 +1442,31 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	gridGameStart.add(five, 1, 2);
 	  	gridGameStart.add(six, 2, 2);
 	  	*/
-
-	  	sceneGameStart = new Scene(gridGameStart, 1280, 720);	
-		
+               
+                /*
+                Image BG1 = new Image("MainBG.png");
+		ImageView BG = new ImageView(BG1);
+		BG.setFitHeight(720);
+                BG.setFitWidth(1280);
+                BG.setLayoutX(0);
+                BG.setLayoutY(0);
+                */
+                Image deGeaSave1 = new Image("DeGeaSave1.png");
+		ImageView deGeaS1 = new ImageView(deGeaSave1);
+		deGeaS1.setFitHeight(180);
+                deGeaS1.setFitWidth(275);
+                deGeaS1.setLayoutX(585);
+                deGeaS1.setLayoutY(175);
+                
+                Image RonaldoShooting1 = new Image("RonaldoShooting.png");
+		ImageView RonaldoShooting = new ImageView(RonaldoShooting1);
+		RonaldoShooting.setFitHeight(300);
+		RonaldoShooting.setFitWidth(215);
+		RonaldoShooting.setLayoutX(340);
+		RonaldoShooting.setLayoutY(240);
+                //gridGameStart.getChildren().addAll(BG, deGeaS1, RonaldoShooting);
+                
+                sceneGameStart = new Scene(gridGameStart, 1280, 720);
 	  	// AfterShot Screen
 	  	VBox boxAfterShot = new VBox();
 	  	lblShotCondition = new Label("");
@@ -948,6 +1482,9 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 	  	sceneAfterShot = new Scene(boxAfterShot, 1280, 720);
 
+
+
+
 	  	// Final Screen
 	  	VBox boxFinalScreen = new VBox();
 	  	lblFinalResult = new Label("");
@@ -962,6 +1499,8 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	boxFinalScreen.setSpacing(20);
 
 	  	sceneFinalScreen = new Scene(boxFinalScreen, 1280, 720);
+
+
 
 	  	// Initialize
       	window.setTitle("Penalty Shootout");
