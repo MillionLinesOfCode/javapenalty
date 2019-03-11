@@ -32,3 +32,15 @@ A simple football penalty shootout game written in the Java programming language
 ![alt text](http://lifesomundane.net/images/-rZ1GcHv5p_k/Uz4UWQqEHiI/AAAAAAAANMA/RzOgIadyUzE/s1600/penalty.jpg)
 
 
+
+# Authors
+* Reeyan Maknojiya
+* Shehzan Udani
+* Renji Takeda
+* Ranadip Chatterjee
+
+# Acknowledgments
+* Our Professor(**Sohaib Bajwa**) and Teaching Assistant(**Danny Fisher**) who provided invaluable help and feedback throughout the project.
+* Oh StackOverflow, where would we be without you?
+* [For further reading on the topic of penalty kicks in football](https://en.wikipedia.org/wiki/Penalty_kick_(association_football))
+![alt text](https://i.ytimg.com/vi/uZsnr4No36I/maxresdefault.jpg)
