@@ -24,7 +24,7 @@ A simple football penalty shootout game written in the Java programming language
 
 `javac *.java`
 
-3.You should be clear to run the AnimationApp.java file using 
+3.You should then be clear to run the AnimationApp.java file using 
 
 `java AnimationApp`
 
