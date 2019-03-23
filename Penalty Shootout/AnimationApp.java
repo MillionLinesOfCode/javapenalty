@@ -516,13 +516,12 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 		// Case 1: Saved
 		if (outcome.equals("1")) {
-			gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 			if (goalkeeperNum == 1) {
 				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeft.png", 155, 275, 405, 170));
 				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 400, 175, 0.75));
 			} else if (goalkeeperNum == 2) {
-				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeft.png", 155, 275, 405, 170));
-				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 850, 130, 0.75));
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaCentre.png", 230, 160, 600, 145));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 600, 145, 0.75));
 			} else if (goalkeeperNum == 3) {
 				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRight.png", 250, 225, 650, 140));
 				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 850, 130, 0.75));
@@ -530,19 +529,58 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 180, 290, 350, 190));
 				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 335, 300, 0.75));
 			} else if (goalkeeperNum == 5) {
-				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 180, 290, 350, 190));
-				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 400, 175, 0.75));
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 170, 280, 575, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 575, 300, 0.75));
 			} else if (goalkeeperNum == 6) {
-				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeft.png", 155, 275, 405, 170));
-				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 400, 175, 0.75));
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRightBottom.png", 180, 290, 625, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 880, 300, 0.75));
 			}
+                        gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 
 		// Case 2: player = goalkeeper, strength 75-79, overpowered goalkeeper, goal
 		} else if (outcome.equals("2")) {
-			gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
+                        if (goalkeeperNum == 1) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeft.png", 155, 275, 405, 170));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 360, 145, 0.75));
+			} else if (goalkeeperNum == 2) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaCentre.png", 230, 160, 600, 145));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 575, 132, 0.75));
+			} else if (goalkeeperNum == 3) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRight.png", 250, 225, 650, 140));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 880, 140, 0.75));
+			} else if (goalkeeperNum == 4) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 180, 290, 375, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 335, 260, 0.75));
+			} else if (goalkeeperNum == 5) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 170, 280, 575, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 590, 270, 0.75));
+			} else if (goalkeeperNum == 6) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRightBottom.png", 180, 290, 625, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 895, 275, 0.75));
+			}
+                        gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 
 		// Case 3: player != goalkeeper, strenght 60-79, goal
 		} else if (outcome.equals("3")) {
+                    	if (playerNum == 1) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 180, 290, 350, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 400, 175, 0.75));
+			} else if (playerNum == 2) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRightBottom.png", 180, 290, 625, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 600, 145, 0.75));
+			} else if (playerNum == 3) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRightBottom.png", 180, 290, 625, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 850, 130, 0.75));
+			} else if (playerNum == 4) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeft.png", 155, 275, 405, 170));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 335, 300, 0.75));
+			} else if (playerNum == 5) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaCentre.png", 230, 160, 600, 145));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 575, 300, 0.75));
+			} else if (playerNum == 6) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRight.png", 250, 225, 650, 140));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 880, 300, 0.75));
+			}
 			gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 
 		// Case 4: player != goalkeeper, strength 1-59, shot missed
@@ -551,6 +589,25 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 		// Case 5: player != goalkeeper, strength 1-59, goal
 		} else if (outcome.equals("5")) {
+                        if (playerNum == 1) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 180, 290, 350, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 400, 175, 0.75));
+			} else if (playerNum == 2) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRightBottom.png", 180, 290, 625, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 600, 145, 0.75));
+			} else if (playerNum == 3) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRightBottom.png", 180, 290, 625, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 850, 130, 0.75));
+			} else if (playerNum == 4) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeft.png", 155, 275, 405, 170));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 335, 300, 0.75));
+			} else if (playerNum == 5) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaCentre.png", 230, 160, 600, 145));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 575, 300, 0.75));
+			} else if (playerNum == 6) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRight.png", 250, 225, 650, 140));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 880, 300, 0.75));
+			}
 			gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 
 		// Case 6: player != goalkeeper, strength 80-89, hit post, shot missed (Ball hits the post)
