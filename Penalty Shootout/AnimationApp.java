@@ -37,7 +37,7 @@ import com.sun.javafx.css.converters.URLConverter;
 
 
 
-public class AnimationApp extends Application implements EventHandler<ActionEvent>{
+public class AnimationApp extends Application implements EventHandler<ActionEvent> {
 	// Variables
 	Stage window;
 	Scene sceneStartMenue, scenePlayerSelection, sceneGoalkeeperSelection, sceneCheckGameStart, sceneGameStart, sceneAfterShot, sceneResult, sceneFinalScreen;
@@ -736,14 +736,14 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	   	// player = goalkeeper, strength 75-79, overpowered goalkeeper, goal
 	   	} else if ((playerNum == goalkeeperNum) && (playerStrength >= 75 && playerStrength <= 79)) {
-	   		lblShotCondition.setText("Shot overpowered the goalkeeper. Goal!");
+	   		lblShotCondition.setText("Great shot! It overpowered the goalkeeper. Goal!");
 	   		player.setPlayerScore(1);
 	   		shotNumCounter ++;
 	   		outcome = "2";
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	   	// player != goalkeeper, strenght 60-79, goal
 	  	} else if ((playerNum != goalkeeperNum) && (playerStrength >= 60 && playerStrength <= 79)) {
-	  		lblShotCondition.setText("Goal!!");
+	  		lblShotCondition.setText("Goal!");
 	   		player.setPlayerScore(1);
 	   		shotNumCounter ++;
 	  		outcome = "3";
@@ -751,17 +751,17 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	// player != goalkeeper, strength 1-59, two options
 	  	} else if ((playerNum != goalkeeperNum) && (playerStrength >= 1 && playerStrength <= 59)) {
 	  		Random rand = new Random();
-			int n = rand.nextInt(2);
+			int n = rand.nextInt(4);
 			if (n == 1) {
 				// Shot missed
-				lblShotCondition.setText("The shot was too weak. Shot Missed.");
+				lblShotCondition.setText("The shot was weak. Shot saved.");
 				goalkeeper.setGoalkeeperScore(1);
 				shotNumCounter ++;
 				outcome = "4";
 	   			window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 			} else {
 				// goal
-				lblShotCondition.setText("Goal!!");
+				lblShotCondition.setText("Goal!");
 				player.setPlayerScore(1);
 				shotNumCounter ++;
 				outcome = "5";
