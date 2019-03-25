@@ -8,14 +8,14 @@ public class Player {
 
 	// Constructors
 	public Player() {
-		this.name = "C.Ronaldo"; 
-		this.nationality = "Portugal";
-		this.playerScore = 0;
+		setName("C.Ronaldo"); 
+		setNationality("Portugal");
+		setPlayerScore(0);
 	}
 	public Player(String name, String nationality) {
-		this.name = name;
-		this.nationality = nationality;
-		this.playerScore = 0;
+		setName(name);
+		setNationality(nationality);
+		setPlayerScore(0);
 	}
 	// Getters and Setters
 	public String getName() {
@@ -37,7 +37,7 @@ public class Player {
 	}
 	public void setPlayerScore(int playerScore) {
 		if(playerScore>0){
-		this.playerScore += playerScore;
+			this.playerScore += playerScore;
 		}
 	}
 }
