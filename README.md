@@ -1,6 +1,6 @@
 ![alt text](http://t2online.com/unsafe/780x380/smart/s3.ap-south-1.amazonaws.com/cms-abp-prod-media/library/polopoly_fs/1.75901.1496484359!/image/image.jpg_gen/derivatives/matrix2x1/image.jpg)
 # javapenalty
-A simple football penalty shootout game written in the Java programming language.
+A simple football penalty shootout game with a GUI written in the Java programming language.
 
 # How it works
 1.Select your favourite player from a list of five players.
@@ -37,18 +37,19 @@ A simple football penalty shootout game written in the Java programming language
 
 2. Ensure that you have junit-4.12.jar and hamcrest-core-1.3.jar in this folder as these are required for testing the java files.
 
-3. Compile the java files and the test files using the command 
+3. Compile the java files and the test files using the command
+
 `javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar *.java`
 
-4. Run the test using the command  
+4. Run the test using the command
+
 `java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore <test class>`
 
-*NOTE: Replace <test class> with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.
-
+*NOTE: Replace <test class> with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.*
 
 # Finding demo-2
 
-* Navigate over to the 'Demo-2-Official' branch
+* Navigate over to the 'Demo-2-Official' branch.
 
 # Authors
 * Reeyan Maknojiya
@@ -59,7 +60,7 @@ A simple football penalty shootout game written in the Java programming language
 # Acknowledgments
 * Our Professor(**Sohaib Bajwa**) and Teaching Assistant(**Daniel Fisher**) who provided indispensable, crucial, critical, key, vital and irreplaceable feedback which was of utmost help throughout the project.
 
-* Oh yeah [StackOverflow](https://stackoverflow.com/), too.
+* We haven't forgotten you yet,[StackOverflow](https://stackoverflow.com/)!.
 
 * [For further reading on the topic of penalty kicks in football](https://en.wikipedia.org/wiki/Penalty_kick_(association_football))
 ![alt text](https://i.ytimg.com/vi/uZsnr4No36I/maxresdefault.jpg)
