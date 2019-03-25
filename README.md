@@ -11,11 +11,32 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 3.Choose where you want to shoot the ball.
  _A number (between 1 and 6) is randomly generated to determine where the keeper will dive._
 
-4.If the goalkeeper guesses it right he saves the shot, else you score!
+4. On the bottom right, a speedbar will be displayed. It will be used to determine the strength with which you kick the football. Click on the desired range, arranged ascending from left to right, to power up your shot.
 
-5.The player will get a total of 5 chances to score(or miss!).
+5.If the goalkeeper guesses it right he saves the shot, else you score!
 
-# Installing and running javapenalty
+6.The player will get a total of 5 chances to score(or miss!).
+
+7. Score is displayed on the top left and is updated after each shot.
+
+# Installing and running javapenalty(Text-based version)
+
+1. Switch to 'Demo-3' branch.
+
+2. Download *all the files* by clicking on the 'Clone or download' button and unzip the files in a directory of your choice.
+
+3. Navigate to the unzipped folder and then proceed to the 'Penalty Shootout Text Version' folder, which should be in the unzipped folder.
+
+4. Compile the .java files using
+
+`javac *.java`
+
+5. You should then be clear to run the AnimationApp file using 
+
+`java AnimationApp`
+
+
+# Installing and running javapenalty(GUI version)
 
 1.Confirm that you are on the 'Demo-3' branch. If not, switch to this branch. 
 
@@ -27,7 +48,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 `javac *.java`
 
-3.You should then be clear to run the AnimationApp.java file using 
+3.You should then be clear to run the AnimationApp file using 
 
 `java AnimationApp`
 
@@ -43,15 +64,21 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 `javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar *.java`
 
-4. Run the test using the command
+4. Run the test using the commands
 
-`java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore <test class>`
+`java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore PlayerTest`
 
-*NOTE: Replace 'test class'(without brackets) with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.*
+  and
+
+`java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore GoalkeeperTest`
+
 
 # Finding demo-2
 
 * Navigate over to the 'Demo-2-Official' branch.
+
+* Follow the same instructions as Installing and running javapenalty.
+
 
 # Authors
 * Reeyan Maknojiya
