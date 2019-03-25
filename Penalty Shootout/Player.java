@@ -36,15 +36,8 @@ public class Player {
 		return playerScore;
 	}
 	public void setPlayerScore(int playerScore) {
+		if(playerScore>0){
 		this.playerScore += playerScore;
-	}
-
-	// Methods
-	//Generates a random number between 1 and 100(to be changed later)
-	public int randStrength() {
-		Random rand = new Random();
-		int n = rand.nextInt(100);
-		n += 1;
-		return n;
+		}
 	}
 }
