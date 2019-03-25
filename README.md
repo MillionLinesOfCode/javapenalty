@@ -45,7 +45,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 `java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore <test class>`
 
-*NOTE: Replace <test class> with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.*
+*NOTE: Replace '<test class>' with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.*
 
 # Finding demo-2
 
