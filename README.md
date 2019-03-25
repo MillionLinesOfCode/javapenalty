@@ -31,7 +31,6 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 `java AnimationApp`
 
-4.Try scoring some goals against some of the best goalkeepers in the world!.
 ![alt text](http://lifesomundane.net/images/-rZ1GcHv5p_k/Uz4UWQqEHiI/AAAAAAAANMA/RzOgIadyUzE/s1600/penalty.jpg)
 
 # Running JUnit tests 
