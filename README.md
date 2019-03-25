@@ -16,11 +16,11 @@ A simple football penalty shootout game written in the Java programming language
 
 # Installing 
 
-1.To run the program, first check that you are on the Demo-2-Official branch. If not, switch to this branch. 
+1.To run the program, first check that you are on the 'Demo-3' branch. If not, switch to this branch. 
 
-2.Download all the .java files and put them all in the same directory.
+2.Download all the files and put them all in the same directory.
 
-3.Proceed to compile the java files using
+3.Proceed to compile the .java files using
 
 `javac *.java`
 
@@ -31,7 +31,24 @@ A simple football penalty shootout game written in the Java programming language
 4.Try scoring some goals against some of the best goalkeepers in the world!.
 ![alt text](http://lifesomundane.net/images/-rZ1GcHv5p_k/Uz4UWQqEHiI/AAAAAAAANMA/RzOgIadyUzE/s1600/penalty.jpg)
 
+# Running JUnit tests 
 
+1. Create a new folder and navigate to it.
+
+2. Ensure that you have junit-4.12.jar and hamcrest-core-1.3.jar in this folder as these are required for testing the java files.
+
+3. Compile the java files and the test files using the command 
+`javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar *.java`
+
+4. Run the test using the command  
+`java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore <test class>`
+
+*NOTE: Replace <test class> with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.
+
+
+# Finding demo-2
+
+* Navigate over to the 'Demo-2-Official' branch
 
 # Authors
 * Reeyan Maknojiya
