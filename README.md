@@ -17,11 +17,13 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 # Installing 
 
-1.To run the program, first check that you are on the 'Demo-3' branch. If not, switch to this branch. 
+1.Confirm that you are on the 'Demo-3' branch. If not, switch to this branch. 
 
-2.Download all the files and put them all in the same directory/folder. Navigate to the 'Penalty Shootout' folder.
+2.Download all the files by clicking on the 'Clone or download' button and unzip the files in a directory of your choice.
 
-3.Proceed to compile the .java files using
+3.Navigate to the unzipped folder and then proceed to the 'Penalty Shootout' folder, which should be in the unzipped folder.
+
+3.Compile the .java files using
 
 `javac *.java`
 
