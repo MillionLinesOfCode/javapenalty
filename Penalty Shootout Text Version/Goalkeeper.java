@@ -8,15 +8,15 @@ public class Goalkeeper {
 
 	// Constructors
 	public Goalkeeper() {
-		this.name = "D.de Gea";
-		this.nationality = "Spain";
-		this.goalkeeperScore = 0;
+		setName("D.de Gea");
+		setNationality("Spain");
+		setGoalkeeperScore(0);
 	}
 
 	public Goalkeeper(String name, String nationality) {
-		this.name = name;
-		this.nationality = nationality;
-		this.goalkeeperScore = 0;
+		setName(name);
+		setNationality(nationality);
+		setGoalkeeperScore(0);
 	}
 
 	// Getters and Setters
@@ -38,7 +38,9 @@ public class Goalkeeper {
 		return goalkeeperScore;
 	}
 	public void setGoalkeeperScore(int goalkeeperScore) {
-		this.goalkeeperScore += goalkeeperScore;
+		if(goalkeeperScore>0){
+			this.goalkeeperScore += goalkeeperScore;
+		}
 	}
 
 	// Methods
