@@ -144,7 +144,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	}
 
 	public Scene playerSelectionScene() {
-		if (scenePlayerSelection == null) {
+            if (scenePlayerSelection == null) {
 		// Player Selection
 		Pane gridPlayerSelection = new Pane();
 		gridPlayerSelection.setPadding(new Insets(10,10,10,10));
@@ -158,7 +158,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	// Please Chose Player
 	  	Label lblChoosePlayer = new Label("Please choose your player to take the penalties.");
 	  	lblChoosePlayer.setFont(Font.font("Arial", 30));
-
 
 	  	// List of Players
 	  	VBox boxPlayerSelection = new VBox();
@@ -423,42 +422,42 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		one.setPrefWidth(200);
 	  	one.setPrefHeight(130);
 	  	one.setLayoutX(325);
-	    one.setLayoutY(125);
+                one.setLayoutY(125);
 
 	  	Button two = new Button("2");
 	  	two.setOpacity(0.2);
 	  	two.setPrefWidth(225);
 	  	two.setPrefHeight(130);
 	  	two.setLayoutX(525);
-	    two.setLayoutY(125);
+                two.setLayoutY(125);
 
 	  	Button three = new Button("3");
 	  	three.setOpacity(0.2);
 	  	three.setPrefWidth(200);
 	  	three.setPrefHeight(130);
 	  	three.setLayoutX(750);
-	    three.setLayoutY(125);
+                three.setLayoutY(125);
 
 	  	Button four = new Button("4");
 	  	four.setOpacity(0.2);
 	  	four.setPrefWidth(200);
 	  	four.setPrefHeight(130);
 	  	four.setLayoutX(325);
-	    four.setLayoutY(250);
+                four.setLayoutY(250);
 
 	  	Button five = new Button("5");
 	  	five.setOpacity(0.2);
 	  	five.setPrefWidth(225);
 	  	five.setPrefHeight(130);
 	  	five.setLayoutX(525);
-	    five.setLayoutY(250);
+                five.setLayoutY(250);
 
 	  	Button six = new Button("6");
 	  	six.setOpacity(0.2);
 	  	six.setPrefWidth(200);
 	  	six.setPrefHeight(130);
 	  	six.setLayoutX(750);
-	    six.setLayoutY(250);
+                six.setLayoutY(250);
 
 	  	one.setOnAction(this);
 	  	two.setOnAction(this);
@@ -472,35 +471,35 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	speed1.setPrefWidth(100);
 	  	speed1.setPrefHeight(90);
 	  	speed1.setLayoutX(1000);
-	    speed1.setLayoutY(455);
+                speed1.setLayoutY(455);
 		
 		Button speed2 = new Button("Speed2");
 	  	speed2.setOpacity(0);
 	  	speed2.setPrefWidth(100);
 	  	speed2.setPrefHeight(90);
 	  	speed2.setLayoutX(1100);
-	    speed2.setLayoutY(455);
+                speed2.setLayoutY(455);
 		
 		Button speed3 = new Button("Speed3");
 	  	speed3.setOpacity(0);
 	  	speed3.setPrefWidth(4);
 	  	speed3.setPrefHeight(90);
 	  	speed3.setLayoutX(1200);
-	    speed3.setLayoutY(455);
+                speed3.setLayoutY(455);
 		
 		Button speed4 = new Button("Speed4");
 	  	speed4.setOpacity(0);
 	  	speed4.setPrefWidth(4);
 	  	speed4.setPrefHeight(90);
 	  	speed4.setLayoutX(1215);
-	    speed4.setLayoutY(455);
+                speed4.setLayoutY(455);
 		
 		Button speed5 = new Button("Speed5");
 	  	speed5.setOpacity(0);
 	  	speed5.setPrefWidth(4);
 	  	speed5.setPrefHeight(90);
 	  	speed5.setLayoutX(1230);
-	    speed5.setLayoutY(455);
+                speed5.setLayoutY(455);
 		
 		speed1.setOnAction(this);
 		speed2.setOnAction(this);
@@ -698,7 +697,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 			// Nothing Happens
 		}
 		
-
 		// Button to go to result
 		Button btnGoToResult = new Button("");
 		btnGoToResult.setOnAction(this);
@@ -813,43 +811,42 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 				outcome = "5";
 	   			window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 			}
-		// player != goalkeeper, strength 80-89, hit post, shot missed
-	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 80 && playerStrength <= 89) && playerNum != 5) {
-                shotNumCounter ++;
-	       	lblShotCondition.setText("The ball hit the post. Shot Missed.");
-                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
-	       	goalkeeper.setGoalkeeperScore(1);
-	      	outcome = "6";
-	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
+                    // player != goalkeeper, strength 80-89, hit post, shot missed
+                } else if ((playerNum != goalkeeperNum) && (playerStrength >= 80 && playerStrength <= 89) && playerNum != 5) {
+                    shotNumCounter ++;
+                    lblShotCondition.setText("The ball hit the post. Shot Missed.");
+                    lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
+                    goalkeeper.setGoalkeeperScore(1);
+                    outcome = "6";
+                    window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	    // player != goalkeeper, strenght 90-100, too strong, shot missed 
-	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 90 && playerStrength <= 100) && playerNum != 5) {
-                shotNumCounter ++;
-	       	lblShotCondition.setText("The shot was too strong and went outside the goal. Shot Missed.");
-                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));	       
-	       	outcome = "7";
-	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
-            } else if ((playerNum != goalkeeperNum) && (playerStrength >= 90 && playerStrength <= 100) && playerNum == 5) {
-                shotNumCounter ++;
-	       	lblShotCondition.setText("Shot saved! Try the corners!");
-                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
-	       	outcome = "8";
-	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
-	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 80 && playerStrength <= 89) && playerNum == 5) {
-                shotNumCounter ++;
-	       	lblShotCondition.setText("Shot saved! Try the corners!");
-                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
-	       	outcome = "9";
-	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
-	    } else {
-	    	// This will never happen
-                shotNumCounter ++;
-	       	lblShotCondition.setText("Shot Missed.");
-                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
-	       	outcome = "10";
-	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
-	    }
-	}
-
+                } else if ((playerNum != goalkeeperNum) && (playerStrength >= 90 && playerStrength <= 100) && playerNum != 5) {
+                    shotNumCounter ++;
+                    lblShotCondition.setText("The shot was too strong and went outside the goal. Shot Missed.");
+                    lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));	       
+                    outcome = "7";
+                    window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
+                } else if ((playerNum != goalkeeperNum) && (playerStrength >= 90 && playerStrength <= 100) && playerNum == 5) {
+                    shotNumCounter ++;
+                    lblShotCondition.setText("Shot saved! Try the corners!");
+                    lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
+                    outcome = "8";
+                    window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
+                } else if ((playerNum != goalkeeperNum) && (playerStrength >= 80 && playerStrength <= 89) && playerNum == 5) {
+                    shotNumCounter ++;
+                    lblShotCondition.setText("Shot saved! Try the corners!");
+                    lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
+                    outcome = "9";
+                    window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
+                } else {
+                    // This will never happen
+                    shotNumCounter ++;
+                    lblShotCondition.setText("Shot Missed.");
+                    lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
+                    outcome = "10";
+                    window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
+                }
+            }
 
 	// Handles Button Click
 	@Override
@@ -910,7 +907,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 			} else if (btnClicked.getText().equals("1")) {
                             playerNum = 1;
                             
-
 			} else if (btnClicked.getText().equals("2")) {
                             playerNum = 2;
 
@@ -927,40 +923,37 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
                             playerNum = 6;
                         }
                         else if(btnClicked.getText().equals("Speed1")) {
-					int playerStrength = 30;
-					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-					decideOutcome(playerNum, goalkeeperNum, playerStrength);
-				} else if(btnClicked.getText().equals("Speed2")) {
-					int playerStrength = 65;
-					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-					decideOutcome(playerNum, goalkeeperNum, playerStrength);
-				} else if(btnClicked.getText().equals("Speed3")) {
-					int playerStrength = 77; 
-					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-					decideOutcome(playerNum, goalkeeperNum, playerStrength);
-				} else if(btnClicked.getText().equals("Speed4")) {
-					int playerStrength = 85;
-					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-					decideOutcome(playerNum, goalkeeperNum, playerStrength);
-				} else if(btnClicked.getText().equals("Speed5")) {
-					int playerStrength = 95;
-					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-					decideOutcome(playerNum, goalkeeperNum, playerStrength);
+                            int playerStrength = 30;
+                            int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+                            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+                        } else if(btnClicked.getText().equals("Speed2")) {
+                            int playerStrength = 65;
+                            int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+                            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+			} else if(btnClicked.getText().equals("Speed3")) {
+                            int playerStrength = 77; 
+                            int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+                            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+			} else if(btnClicked.getText().equals("Speed4")) {
+                            int playerStrength = 85;
+                            int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+                            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+			} else if(btnClicked.getText().equals("Speed5")) {
+                            int playerStrength = 95;
+                            int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+                            decideOutcome(playerNum, goalkeeperNum, playerStrength);
 				
 			} else if (btnClicked.getText().equals("Back to Game")) {
-				//lblShotNum.setText("Shot Number : " + shotNumCounter);
-				//lblShotsMade.setText("Shots Made: " + player.getPlayerScore());
-				//lblShotsMissed.setText("Shots Saved : " + goalkeeper.getGoalkeeperScore());
-				if (shotNumCounter < 6) {
-					window.setScene(gameStartScene());
-				} else {
-					if (player.getPlayerScore() > goalkeeper.getGoalkeeperScore()) {
+                            if (shotNumCounter < 6) {
+				window.setScene(gameStartScene());
+                            } else {
+				if (player.getPlayerScore() > goalkeeper.getGoalkeeperScore()) {
         				lblFinalResult.setText("Congratulations! You Won!!");
        				} else {
         				lblFinalResult.setText("Sorry. You Lost.");
        				}
 					window.setScene(finalScreenScene());
-				}
+                            }
 			
 			// Go to Result
 			} else if (btnClicked.getText().equals("")) {
@@ -980,7 +973,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	// Initialize
       	window.setTitle("Penalty Shootout");
       	window.setResizable(false);
-   		window.setScene(startMenueScene());
+   	window.setScene(startMenueScene());
       	window.show();
 	}
 }
