@@ -3,7 +3,7 @@ public class Goalkeeper {
 	//Instance Variables that represent the characteristics of the goalkeeper that is played by the user's system and is not playable by user.
 	private String name;
 	private String nationality;
-	private int goalkeeperScore = 0; //Default value
+	private int goalkeeperScore = 0; //Default value given
 
 	// Constructors
 	public Goalkeeper() {
