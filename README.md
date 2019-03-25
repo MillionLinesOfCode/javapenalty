@@ -4,7 +4,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 # How it works
 
-1.Select your favourite player from a list of five players.
+1.Pick your favourite player from a list of five players. This is the player with which you will play this game.
 
 2.Select a goalkeeper from a list of five keepers.
 
@@ -37,7 +37,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 1. Navigate to the directory/folder in which you downloaded all the files from the 'Demo-3' branch.
 
-2. Ensure that you have junit-4.12.jar and hamcrest-core-1.3.jar in this folder as these are required for testing the java files.
+2. Ensure that you have the files: junit-4.12.jar and hamcrest-core-1.3.jar in this folder as these are required for testing the java files.
 
 3. Compile the java files and the test files using the command
 
@@ -60,7 +60,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 * Ranadip Chatterjee
 
 # Acknowledgments
-* Our Professor(**Sohaib Bajwa**) and Teaching Assistant(**Daniel Fisher**) who provided indispensable, crucial, critical, key, vital and irreplaceable feedback which was of utmost help throughout the project.
+* Our Professor(**Sohaib Bajwa**) and Teaching Assistant(**Daniel Fisher**) who provided indispensable, crucial, critical, key, vital and irreplaceable feedback which was of utmost help all through the project.
 
 * We haven't forgotten you yet,[StackOverflow](https://stackoverflow.com/)!.
 
