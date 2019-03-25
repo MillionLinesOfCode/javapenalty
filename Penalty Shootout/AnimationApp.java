@@ -46,19 +46,20 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	private Goalkeeper goalkeeper = new Goalkeeper();
 	private DrawObjects object = new DrawObjects();
 
-
+        
 	Label lblWelcomePlayer = new Label("");
 	TextField tfName;
 	Label lblChosenPlayer = new Label("");
 	Label lblChosenGoalkeeper = new Label("");
-	Label lblShotNum = new Label("Shot Number : " + "1");
-	Label lblShotsMade = new Label("Shots Made: " + player.getPlayerScore());
-	Label lblShotsMissed = new Label("Shots Missed : " + goalkeeper.getGoalkeeperScore());
 	Label lblShotCondition = new Label("");
 	Label lblFinalResult = new Label("");
-
+        Label lblScoreOutput = new Label("");
+        Label instructions = new Label("Please click anywhere on the goal to choose the direction. Then click on the speed bar to choose the shot power.");
+        
 	int shotNumCounter = 1;
-
+        int shotSavedCounter = 0;
+        int playerNum;
+        
 	BackgroundImage selectionBG = new BackgroundImage(new Image("selectionBG.jpg",1280,720,false,true),null,null,null,null);
 	Image portugalFlag = new Image("portugalFlag.png");
 	Image juventusFlag = new Image("JuventusFlag.png");
@@ -416,38 +417,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		// Add Player, Goalkeeper, Football		
         gridGameStart.getChildren().addAll(object.drawPlayer("deGeaStanding.png", 200, 100, 585, 175), object.drawPlayer("ronaldoStanding.png", 350, 200, 250, 300), object.drawFootball("football.png", 50, 50, 595, 437, 0.75));
 
-        // Shot number
-		VBox boxShotNum = new VBox();
-		Label lblInstruction = new Label("Choose where to shoot.");
-		lblInstruction.setFont(Font.font("Arial", 30));
-		/*
-		lblShotNum = new Label("Shot Number : " + shotNumCounter);
-		*/
-		lblShotNum.setFont(Font.font("Arial", 30));
-		Label lblWhiteSpace = new Label("");
-		lblWhiteSpace.setFont(Font.font("Arial", 30));
-		boxShotNum.getChildren().add(lblInstruction);
-		boxShotNum.getChildren().add(lblShotNum);
-		boxShotNum.getChildren().add(lblWhiteSpace);
-		boxShotNum.setSpacing(20);
-		boxShotNum.setAlignment(Pos.TOP_CENTER);
-
-		// Current Standing
-		VBox boxScoreCounter = new VBox();
-		/*
-		lblShotsMade = new Label("Shots Made: " + player.getPlayerScore());
-		*/
-		lblShotsMade.setFont(Font.font("Arial", 30));
-		/*
-		lblShotsMissed = new Label("Shots Missed : " + goalkeeper.getGoalkeeperScore());
-		*/
-		lblShotsMissed.setFont(Font.font("Arial", 30));
-		boxScoreCounter.getChildren().add(lblShotsMade);
-		boxScoreCounter.getChildren().add(lblShotsMissed);
-		boxScoreCounter.getChildren().add(lblWhiteSpace);
-		boxScoreCounter.setSpacing(20);
-		boxScoreCounter.setAlignment(Pos.TOP_CENTER);
-
 		// Buttons to Shoot
 		Button one = new Button("1");
 		one.setOpacity(0.2);
@@ -497,8 +466,52 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	four.setOnAction(this);
 	  	five.setOnAction(this);
 	  	six.setOnAction(this);
-	  	
-	  	gridGameStart.getChildren().addAll(one,two,three,four,five,six);
+                
+                Button speed1 = new Button("Speed1");
+	  	speed1.setOpacity(0);
+	  	speed1.setPrefWidth(100);
+	  	speed1.setPrefHeight(90);
+	  	speed1.setLayoutX(1000);
+	    speed1.setLayoutY(455);
+		
+		Button speed2 = new Button("Speed2");
+	  	speed2.setOpacity(0);
+	  	speed2.setPrefWidth(100);
+	  	speed2.setPrefHeight(90);
+	  	speed2.setLayoutX(1100);
+	    speed2.setLayoutY(455);
+		
+		Button speed3 = new Button("Speed3");
+	  	speed3.setOpacity(0);
+	  	speed3.setPrefWidth(4);
+	  	speed3.setPrefHeight(90);
+	  	speed3.setLayoutX(1200);
+	    speed3.setLayoutY(455);
+		
+		Button speed4 = new Button("Speed4");
+	  	speed4.setOpacity(0);
+	  	speed4.setPrefWidth(4);
+	  	speed4.setPrefHeight(90);
+	  	speed4.setLayoutX(1215);
+	    speed4.setLayoutY(455);
+		
+		Button speed5 = new Button("Speed5");
+	  	speed5.setOpacity(0);
+	  	speed5.setPrefWidth(4);
+	  	speed5.setPrefHeight(90);
+	  	speed5.setLayoutX(1230);
+	    speed5.setLayoutY(455);
+		
+		speed1.setOnAction(this);
+		speed2.setOnAction(this);
+		speed3.setOnAction(this);
+		speed4.setOnAction(this);
+		speed5.setOnAction(this);
+		instructions.setLayoutX(25);	
+                instructions.setLayoutY(5);
+                instructions.setFont(Font.font("Arial", 25));
+                instructions.setTextFill(Color.WHITE);
+	  	gridGameStart.getChildren().addAll(instructions,one,two,three,four,five,six,object.drawPlayer("speedbar.png",100,250,1000,455),speed1,speed2,speed3,speed4,speed5);	  	
 
 	  	sceneGameStart = new Scene(gridGameStart, 1280, 720);
 	  	return sceneGameStart;
@@ -512,7 +525,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		// Background Image
 		BackgroundImage gameStartBG = new BackgroundImage(new Image("gameStartBG.png",1280,720,false,true),null,null,null,null);
 		gridAfterShot.setBackground(new Background(gameStartBG));
-
 
 		// Case 1: Saved
 		if (outcome.equals("1")) {
@@ -536,7 +548,6 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 880, 300, 0.75));
 			}
                         gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
-
 		// Case 2: player = goalkeeper, strength 75-79, overpowered goalkeeper, goal
 		} else if (outcome.equals("2")) {
                         if (goalkeeperNum == 1) {
@@ -560,7 +571,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 			}
                         gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 
-		// Case 3: player != goalkeeper, strenght 60-79, goal
+		// Case 3: player != goalkeeper, strength 60-79, goal
 		} else if (outcome.equals("3")) {
                     	if (playerNum == 1) {
 				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 180, 290, 350, 190));
@@ -585,7 +596,26 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 
 		// Case 4: player != goalkeeper, strength 1-59, shot missed
 		} else if (outcome.equals("4")) {
-			gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
+			if (goalkeeperNum == 1) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeft.png", 155, 275, 405, 170));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 400, 175, 0.75));
+			} else if (goalkeeperNum == 2) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaCentre.png", 230, 160, 600, 145));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 600, 145, 0.75));
+			} else if (goalkeeperNum == 3) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRight.png", 250, 225, 650, 140));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 850, 130, 0.75));
+			} else if (goalkeeperNum == 4) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 180, 290, 350, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 335, 300, 0.75));
+			} else if (goalkeeperNum == 5) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 170, 280, 575, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 575, 300, 0.75));
+			} else if (goalkeeperNum == 6) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaRightBottom.png", 180, 290, 625, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 880, 300, 0.75));
+			}
+                        gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 
 		// Case 5: player != goalkeeper, strength 1-59, goal
 		} else if (outcome.equals("5")) {
@@ -656,6 +686,14 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 			}
 			gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 
+                }
+                // Case 8 and Case 9: Centre shot. Shot saved!
+                else if (outcome.equals("8") || outcome.equals("9")) {
+                        if (playerNum == 5) {
+				gridAfterShot.getChildren().add(object.drawPlayer("deGeaLeftBottom.png", 170, 280, 575, 190));
+				gridAfterShot.getChildren().add(object.drawFootball("football.png", 35, 35, 575, 300, 0.75)); 
+                        }
+                        gridAfterShot.getChildren().add(object.drawPlayer("ronaldoShooting.png", 300, 215, 340, 240));
 		} else {
 			// Nothing Happens
 		}
@@ -681,11 +719,13 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		// Result Screen
 	  	VBox boxResult = new VBox();
 	  	lblShotCondition.setFont(Font.font("Arial", 30));
+                lblScoreOutput.setFont(Font.font("Arial", 30));
 	  	Button btnBackToGame = new Button("Back to Game");
 	  	btnBackToGame.setOnAction(this);
 	  	btnBackToGame.setPrefWidth(150);
 	  	btnBackToGame.setPrefHeight(30);
 	  	boxResult.getChildren().add(lblShotCondition);
+                boxResult.getChildren().add(lblScoreOutput);
 	  	boxResult.getChildren().add(btnBackToGame);
 	  	boxResult.setAlignment(Pos.CENTER);
 	  	boxResult.setSpacing(20);
@@ -722,30 +762,32 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		lblChosenPlayer.setText("The player you chose is " + player.getName() + ".");
 		lblChosenGoalkeeper.setText("The goalkeeper you chose is " + goalkeeper.getName() + ".");
 		window.setScene(checkGameStartScene());
-	}
-
+	}   
 	// Decides outcome of the shot
 	public void decideOutcome(int playerNum, int goalkeeperNum, int playerStrength) {
 		// player = goalkeeper, shot missed
 		String outcome = "";
 		if ((playerNum == goalkeeperNum) && (playerStrength <= 74 || playerStrength >= 80)) {
      		lblShotCondition.setText("Shot was saved by the goalkeeper. Shot Missed.");
+                shotNumCounter ++;
+                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
       		goalkeeper.setGoalkeeperScore(1);
-       		shotNumCounter ++;
        		outcome = "1";
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	   	// player = goalkeeper, strength 75-79, overpowered goalkeeper, goal
 	   	} else if ((playerNum == goalkeeperNum) && (playerStrength >= 75 && playerStrength <= 79)) {
+                        player.setPlayerScore(1);
+                        shotNumCounter ++;
 	   		lblShotCondition.setText("Great shot! It overpowered the goalkeeper. Goal!");
-	   		player.setPlayerScore(1);
-	   		shotNumCounter ++;
+                        lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
 	   		outcome = "2";
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
-	   	// player != goalkeeper, strenght 60-79, goal
+	   	// player != goalkeeper, strength 60-79, goal
 	  	} else if ((playerNum != goalkeeperNum) && (playerStrength >= 60 && playerStrength <= 79)) {
-	  		lblShotCondition.setText("Goal!");
-	   		player.setPlayerScore(1);
-	   		shotNumCounter ++;
+                        player.setPlayerScore(1);
+                        shotNumCounter ++;
+                        lblShotCondition.setText("Great shot! Goal!");
+                        lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
 	  		outcome = "3";
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	  	// player != goalkeeper, strength 1-59, two options
@@ -754,39 +796,56 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 			int n = rand.nextInt(4);
 			if (n == 1) {
 				// Shot missed
+                                shotNumCounter ++;
 				lblShotCondition.setText("The shot was weak. Shot saved.");
+                                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
 				goalkeeper.setGoalkeeperScore(1);
-				shotNumCounter ++;
+				
+                               
 				outcome = "4";
 	   			window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 			} else {
 				// goal
+                                player.setPlayerScore(1);
+                                shotNumCounter ++;
 				lblShotCondition.setText("Goal!");
-				player.setPlayerScore(1);
-				shotNumCounter ++;
+                                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
 				outcome = "5";
 	   			window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 			}
 		// player != goalkeeper, strength 80-89, hit post, shot missed
-	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 80 && playerStrength <= 89)) {
+	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 80 && playerStrength <= 89) && playerNum != 5) {
+                shotNumCounter ++;
 	       	lblShotCondition.setText("The ball hit the post. Shot Missed.");
+                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
 	       	goalkeeper.setGoalkeeperScore(1);
-	       	shotNumCounter ++;
 	      	outcome = "6";
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	    // player != goalkeeper, strenght 90-100, too strong, shot missed 
-	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 90 && playerStrength <= 100)) {
+	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 90 && playerStrength <= 100) && playerNum != 5) {
+                shotNumCounter ++;
 	       	lblShotCondition.setText("The shot was too strong and went outside the goal. Shot Missed.");
-	       	goalkeeper.setGoalkeeperScore(1);
-	       	shotNumCounter ++;
+                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));	       
 	       	outcome = "7";
+	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
+            } else if ((playerNum != goalkeeperNum) && (playerStrength >= 90 && playerStrength <= 100) && playerNum == 5) {
+                shotNumCounter ++;
+	       	lblShotCondition.setText("Shot saved! Try the corners!");
+                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
+	       	outcome = "8";
+	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
+	    } else if ((playerNum != goalkeeperNum) && (playerStrength >= 80 && playerStrength <= 89) && playerNum == 5) {
+                shotNumCounter ++;
+	       	lblShotCondition.setText("Shot saved! Try the corners!");
+                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
+	       	outcome = "9";
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	    } else {
 	    	// This will never happen
+                shotNumCounter ++;
 	       	lblShotCondition.setText("Shot Missed.");
-	       	goalkeeper.setGoalkeeperScore(1);
-	       	shotNumCounter ++;
-	       	outcome = "8";
+                lblScoreOutput.setText("Goals Scored: " + player.getPlayerScore() + ", " + "Goals Missed: " + (shotNumCounter - player.getPlayerScore()-1));
+	       	outcome = "10";
 	   		window.setScene(afterShotScene(outcome, playerNum, goalkeeperNum));
 	    }
 	}
@@ -849,45 +908,49 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 				window.setScene(gameStartScene());
 
 			} else if (btnClicked.getText().equals("1")) {
-				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-	            int playerStrength = player.randStrength();
-	            int playerNum = 1;
-	            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+                            playerNum = 1;
+                            
 
 			} else if (btnClicked.getText().equals("2")) {
-				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-	            int playerStrength = player.randStrength();
-	            int playerNum = 2;
-	            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+                            playerNum = 2;
 
 			} else if (btnClicked.getText().equals("3")) {
-				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-	            int playerStrength = player.randStrength();
-	            int playerNum = 3;
-	            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+                            playerNum = 3;
 
 			} else if (btnClicked.getText().equals("4")) {
-				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-	            int playerStrength = player.randStrength();
-	            int playerNum = 4;
-	            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+                            playerNum = 4;
 
 			} else if (btnClicked.getText().equals("5")) {
-				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-	            int playerStrength = player.randStrength();
-	            int playerNum = 5;
-	            decideOutcome(playerNum, goalkeeperNum, playerStrength);
+                            playerNum = 5;
 
 			} else if (btnClicked.getText().equals("6")) {
-				int goalkeeperNum = goalkeeper.randGoalkeeperNum();
-	            int playerStrength = player.randStrength();
-	            int playerNum = 6;
-	            decideOutcome(playerNum, goalkeeperNum, playerStrength);
-
+                            playerNum = 6;
+                        }
+                        else if(btnClicked.getText().equals("Speed1")) {
+					int playerStrength = 30;
+					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+					decideOutcome(playerNum, goalkeeperNum, playerStrength);
+				} else if(btnClicked.getText().equals("Speed2")) {
+					int playerStrength = 65;
+					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+					decideOutcome(playerNum, goalkeeperNum, playerStrength);
+				} else if(btnClicked.getText().equals("Speed3")) {
+					int playerStrength = 77; 
+					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+					decideOutcome(playerNum, goalkeeperNum, playerStrength);
+				} else if(btnClicked.getText().equals("Speed4")) {
+					int playerStrength = 85;
+					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+					decideOutcome(playerNum, goalkeeperNum, playerStrength);
+				} else if(btnClicked.getText().equals("Speed5")) {
+					int playerStrength = 95;
+					int goalkeeperNum = goalkeeper.randGoalkeeperNum();
+					decideOutcome(playerNum, goalkeeperNum, playerStrength);
+				
 			} else if (btnClicked.getText().equals("Back to Game")) {
-				lblShotNum.setText("Shot Number : " + shotNumCounter);
-				lblShotsMade.setText("Shots Made: " + player.getPlayerScore());
-				lblShotsMissed.setText("Shots Missed : " + goalkeeper.getGoalkeeperScore());
+				//lblShotNum.setText("Shot Number : " + shotNumCounter);
+				//lblShotsMade.setText("Shots Made: " + player.getPlayerScore());
+				//lblShotsMissed.setText("Shots Saved : " + goalkeeper.getGoalkeeperScore());
 				if (shotNumCounter < 6) {
 					window.setScene(gameStartScene());
 				} else {
