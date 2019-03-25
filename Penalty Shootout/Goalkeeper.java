@@ -10,7 +10,7 @@ public class Goalkeeper {
 	public Goalkeeper() {
 		//Default values
 		setName("D.de Gea");
-		setNationality("Spain);
+		setNationality("Spain");
 		setGoalkeeperScore(0);
 	}
 
