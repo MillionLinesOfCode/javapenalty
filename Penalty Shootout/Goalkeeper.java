@@ -1,4 +1,5 @@
-import java.util.Random;
+import java.util.Random; //Used to generate a stream of pseudorandom numbers.
+
 public class Goalkeeper {
 	//Instance Variables that represent the characteristics of the goalkeeper that is played by the user's system and is not playable by user.
 	private String name;
@@ -8,15 +9,15 @@ public class Goalkeeper {
 	// Constructors
 	public Goalkeeper() {
 		//Default values
-		this.name = "D.de Gea";
-		this.nationality = "Spain";
-		this.goalkeeperScore = 0;
+		setName("D.de Gea");
+		setNationality("Spain);
+		setGoalkeeperScore(0);
 	}
 
 	public Goalkeeper(String name, String nationality) {
-		this.name = name;
-		this.nationality = nationality;
-		this.goalkeeperScore = 0;
+		setName(name);
+		setNationality(nationality);
+		setGoalkeeperScore(0);
 	}
 
 	// Getters and Setters
