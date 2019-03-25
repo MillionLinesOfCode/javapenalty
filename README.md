@@ -19,7 +19,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 1.To run the program, first check that you are on the 'Demo-3' branch. If not, switch to this branch. 
 
-2.Download all the files and put them all in the same directory.
+2.Download all the files and put them all in the same directory/folder.
 
 3.Proceed to compile the .java files using
 
@@ -34,7 +34,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 # Running JUnit tests 
 
-1. Create a new folder and navigate to it.
+1. Navigate to the directory/folder in which you downloaded all the files from the 'Demo-3' branch.
 
 2. Ensure that you have junit-4.12.jar and hamcrest-core-1.3.jar in this folder as these are required for testing the java files.
 
