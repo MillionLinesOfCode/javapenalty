@@ -15,7 +15,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 5.The player will get a total of 5 chances to score(or miss!).
 
-# Installing 
+# Installing and running javapenalty
 
 1.Confirm that you are on the 'Demo-3' branch. If not, switch to this branch. 
 
