@@ -3,6 +3,7 @@
 A simple football penalty shootout game with a GUI written in the Java programming language.
 
 # How it works
+
 1.Select your favourite player from a list of five players.
 
 2.Select a goalkeeper from a list of five keepers.
@@ -45,7 +46,7 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 `java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore <test class>`
 
-*NOTE: Replace 'test class' with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.*
+*NOTE: Replace 'test class'(without brackets) with PlayerD3Test and GoalkeeperD3Test to test the Player.java and Goalkeeper.java files respectively.*
 
 # Finding demo-2
 
@@ -63,4 +64,5 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 * We haven't forgotten you yet,[StackOverflow](https://stackoverflow.com/)!.
 
 * [For further reading on the topic of penalty kicks in football](https://en.wikipedia.org/wiki/Penalty_kick_(association_football))
+
 ![alt text](https://i.ytimg.com/vi/uZsnr4No36I/maxresdefault.jpg)
