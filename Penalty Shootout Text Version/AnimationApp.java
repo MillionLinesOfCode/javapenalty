@@ -6,26 +6,23 @@ public class AnimationApp {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Penalty Shootout Game!");
 
-		Scanner keyboard = new Scanner(System.in);
+		Scanner keyboard = new Scanner(System.in); //Takes input from the user, specifically his/her name.
 		System.out.print("Please enter your name: ");
-		String playerName = keyboard.nextLine();
+		String playerName = keyboard.nextLine(); //Reads what the user types in field.
 		System.out.println("");
 		System.out.println("Welcome " + playerName + "!");
 		System.out.println("");
-
+		
+		// Player Selection
 		System.out.println("Please Choose your player to take the penalties.");
-		System.out.println("1- C.Ronaldo\n" +
-        				   "2- L.Messi\n"   +
-        				   "3- P.Pogba\n"   +
-        			  	   "4- Neymar\n"    +
-						   "5- E.Hazard\n");
-        System.out.print("Please enter a number between 1 and 5: ");
+		System.out.println("1- C.Ronaldo\n" +"2- L.Messi\n"+"3- P.Pogba\n"+"4- Neymar\n"+"5- E.Hazard\n");
+		System.out.print("Please enter a number between 1 and 5: ");//To choose the player with whom you will (try) to score
         
-        // Player Selection
         Player player = new Player();
         boolean playerIntCheck = false;
         while(playerIntCheck == false){
         	String playerOption = keyboard.nextLine();
+		//Case should be a better option
         	if (playerOption.equals("1")) {
         		System.out.println("");
         		System.out.println("Great! You chose " + player.getName() + ".");
@@ -58,17 +55,13 @@ public class AnimationApp {
         		System.out.print("Error! Please enter a valid number: ");
         	}
         }
-
+		
+	// Goalkeeper Selection
         System.out.println("");
         System.out.println("Choose your favorite goalkeeper to save the penalties.");
-        System.out.println("1- D.de Gea\n"     +
-        				   "2- J.Oblak\n"      +			
-        				   "3- M.ter Stegen\n" +
-        				   "4- T.Courtois\n"   +
-        				   "5- M.Neuer\n");
-        System.out.print("Please enter a number between 1 and 5: ");
+        System.out.println("1- D.de Gea\n"+"2- J.Oblak\n"+"3- M.ter Stegen\n" +"4- T.Courtois\n"+"5- M.Neuer\n");
+        System.out.print("Please enter a number between 1 and 5: "); //To choose the goalkeeper you want to face off against
 
-        // Goalkeeper Selection
         Goalkeeper goalkeeper = new Goalkeeper();
         while(playerIntCheck == false){
         	String playerOption = keyboard.nextLine();
@@ -107,7 +100,7 @@ public class AnimationApp {
         
         System.out.println("");
         System.out.println("");
-        System.out.println("Game Start!");
+        System.out.println("Game Start!"); //Self explanatory
         System.out.println("");
 
    		// Shooting
@@ -119,10 +112,10 @@ public class AnimationApp {
                                "|    4    |   5    |    6    | \n" +
                                "|_________|________|_________| \n");
 
-        System.out.println("");
+        System.out.println(""); //Its a text based version, had to make do with what was available!
 
         for (int i = 0; i < 5; i++) {
-        	System.out.print("Choose a number to take a shot #" + (i + 1) + ": ");
+        	System.out.print("Choose a number to take a shot #" + (i + 1) + ": ");//each number corresponds to a section in the goal.
             String shotInput = keyboard.nextLine();
 
             if (shotInput.equals("1") || shotInput.equals("2") || shotInput.equals("3") || shotInput.equals("4") || shotInput.equals("5") || shotInput.equals("6")) {
@@ -208,6 +201,7 @@ public class AnimationApp {
 
         System.out.println("");
         if (player.getPlayerScore() > goalkeeper.getGoalkeeperScore()) {
+		//Self explanatory stuff
         	System.out.println("Congratulations! You Won!!");
         } else {
         	System.out.println("Sorry. You Lost.");
