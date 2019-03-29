@@ -1,7 +1,7 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
-//This file is used to test the Goalkeeper.java file and check if
-//it runs as intended(using JUnit).
+//This file is used to test the Goalkeeper.java file(specifically the logic) and check if it runs as intended(using JUnit).
+//What each method tries to test is inferable by the method name.
 
 public class GoalkeeperTest{
     @Test
