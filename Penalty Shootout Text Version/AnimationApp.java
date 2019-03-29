@@ -3,8 +3,8 @@ import java.util.*;
 public class AnimationApp {
 	// Main Method
 	public static void main(String[] args) {
+		
 		System.out.println("Welcome to the Penalty Shootout Game!");
-
 		Scanner keyboard = new Scanner(System.in); //Takes input from the user, specifically his/her name.
 		System.out.print("Please enter your name: ");
 		String playerName = keyboard.nextLine(); //Reads what the user types in field.
