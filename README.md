@@ -1,21 +1,21 @@
 ![alt text](http://t2online.com/unsafe/780x380/smart/s3.ap-south-1.amazonaws.com/cms-abp-prod-media/library/polopoly_fs/1.75901.1496484359!/image/image.jpg_gen/derivatives/matrix2x1/image.jpg)
 # javapenalty
+
 A simple football penalty shootout game with a GUI written in the Java programming language.
 
 # How it works
 
-1.Pick your favourite player from a list of five players. This is the player with which you will play this game.
+1. Pick your favourite player from a list of five players. This is the player with which you will play this game.
 
-2.Select a goalkeeper from a list of five keepers.
+2. Select a goalkeeper from a list of five keepers.
 
-3.Choose where you want to shoot the ball.
- _A number (between 1 and 6) is randomly generated to determine where the keeper will dive._
+3. Choose where you want to shoot the ball.
 
 4. On the bottom right, a speedbar will be displayed. It will be used to determine the strength with which you kick the football. Click on the desired range, arranged ascending from left to right, to power up your shot.
 
-5.If the goalkeeper guesses it right he saves the shot, else you score!
+5. If the goalkeeper guesses it right he saves the shot, else you score!
 
-6.The player will get a total of 5 chances to score(or miss!).
+6. The player will get a total of 5 chances to score(or miss!).
 
 7. Score is displayed on the top left and is updated after each shot.
 
@@ -38,17 +38,17 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 
 # Installing and running javapenalty(GUI version)
 
-1.Confirm that you are on the 'Demo-3' branch. If not, switch to this branch. 
+1. Confirm that you are on the 'Demo-3' branch. If not, switch to this branch. 
 
-2.Download all the files by clicking on the 'Clone or download' button and unzip the files in a directory of your choice.
+2. Download all the files by clicking on the 'Clone or download' button and unzip the files in a directory of your choice.
 
-3.Navigate to the unzipped folder and then proceed to the 'Penalty Shootout' folder, which should be in the unzipped folder.
+3. Navigate to the unzipped folder and then proceed to the 'Penalty Shootout' folder, which should be in the unzipped folder.
 
-3.Compile the .java files using
+3. Compile the .java files using
 
 `javac *.java`
 
-3.You should then be clear to run the AnimationApp file using 
+3. You should then be clear to run the AnimationApp file using 
 
 `java AnimationApp`
 
