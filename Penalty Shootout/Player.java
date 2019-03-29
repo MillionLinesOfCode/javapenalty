@@ -1,10 +1,10 @@
-import java.util.Random;
+import java.util.*;
 
 public class Player {
 	// Instance Variables that represent the characteristics of the player that the user controls
 	private String name; 
 	private String nationality;
-	private int playerScore = 0;
+	private int playerScore = 0; //Default score that a player starts with
 
 	// Constructors
 	public Player() {
@@ -36,7 +36,7 @@ public class Player {
 		return playerScore;
 	}
 	public void setPlayerScore(int playerScore) {
-		if(playerScore>0){
+		if(playerScore>0){ //To make sure the players score is valid since the score cannot decrease 
 			this.playerScore += playerScore;
 		}
 	}
