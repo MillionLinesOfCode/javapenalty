@@ -1,8 +1,11 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-//This file is used to test the Player.java file and check if
-//it runs as intended(using JUnit).
+/*
+  This file is used to test the Player.java file and check if
+  it runs as intended(using JUnit).
+  Test names indicate nature of test.
+  */
 
 public class PlayerTest{
     @Test
