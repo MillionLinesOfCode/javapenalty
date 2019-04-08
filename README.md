@@ -1,7 +1,7 @@
 ![alt text](http://t2online.com/unsafe/780x380/smart/s3.ap-south-1.amazonaws.com/cms-abp-prod-media/library/polopoly_fs/1.75901.1496484359!/image/image.jpg_gen/derivatives/matrix2x1/image.jpg)
 # javapenalty
 
-A simple football penalty shootout game with a GUI written in the Java programming language.
+A simple football penalty shootout game with a GUI written in Java.
 
 # How it works
 
@@ -16,8 +16,6 @@ A simple football penalty shootout game with a GUI written in the Java programmi
 5. If the goalkeeper guesses it right he saves the shot, else you score!
 
 6. The player will get a total of 5 chances to score(or miss!).
-
-7. Score is displayed on the top left and is updated after each shot.
 
 # Installing and running javapenalty(Text-based version)
 
