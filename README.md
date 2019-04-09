@@ -1,7 +1,7 @@
 ![alt text](http://t2online.com/unsafe/780x380/smart/s3.ap-south-1.amazonaws.com/cms-abp-prod-media/library/polopoly_fs/1.75901.1496484359!/image/image.jpg_gen/derivatives/matrix2x1/image.jpg)
 # javapenalty
 
-A simple football penalty shootout game with a GUI written in Java.
+A simple football/soccer penalty shootout game, written in Java.
 
 # How it works
 
