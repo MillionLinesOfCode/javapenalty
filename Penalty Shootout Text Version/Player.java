@@ -20,28 +20,27 @@ public class Player {
 	}
 
 	// Getters and Setters
+        @Override
 	public String getName() {
 		return name;
 	}
+        @Override
 	public void setName(String name) {
 		this.name = name;
 	}
 
+        @Override
 	public String getNationality() {
 		return nationality;
 	}
+        @Override
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
-
 	public int getPlayerScore() {
 		return playerScore;
 	}
-	public void setPlayerScore(int playerScore) {
-		this.playerScore += playerScore;
-	}
-
-	// Methods
+	// Other Method(s)
 	public int randStrength() {
 		Random rand = new Random();
 		int n = rand.nextInt(100);
