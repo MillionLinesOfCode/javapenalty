@@ -1,38 +1,6 @@
-import java.util.Scanner;
-import java.util.Stack;
-
-import javax.swing.GroupLayout.Group;
-
-import java.util.Random;
-
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
-
-import javafx.scene.control.Label;
-import javafx.scene.text.Font;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
-
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-
+import java.util.*;
+import javax.*;
+import javafx.*;
 import com.sun.javafx.css.converters.URLConverter;
 
 
