@@ -179,7 +179,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		
 		Image ronaldo2 = new Image("Ronaldo_2.png");
 		ImageView RonaldoImg2 = new ImageView(ronaldo2);
-		RonaldoImg2.setFitHeight(350);
+		RonaldoImg2.setFitHeight(400);
 		RonaldoImg2.setFitWidth(450);
 
 		// Messi
