@@ -172,7 +172,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		juventus.setFitHeight(30);
 		juventus.setFitWidth(60);
 
-		Image ronaldo = new Image("Ronaldo1.png");
+		Image ronaldo = new Image("Ronaldo_1.png");
 		ImageView RonaldoImg = new ImageView(ronaldo);
 		RonaldoImg.setFitHeight(350);
 		RonaldoImg.setFitWidth(250);
