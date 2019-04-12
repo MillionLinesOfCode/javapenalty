@@ -156,7 +156,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	lblWelcomePlayer.setFont(Font.font("Arial", 30));
 
 	  	// Please Chose Player
-	  	Label lblChoosePlayer = new Label("Please choose your player to take the penalties.");
+	  	Label lblChoosePlayer = new Label("Your player to take the penalties is C.Ronaldo.");
 	  	lblChoosePlayer.setFont(Font.font("Arial", 30));
 
 	  	// List of Players
@@ -171,6 +171,16 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		ImageView juventus = new ImageView(juventusFlag);
 		juventus.setFitHeight(30);
 		juventus.setFitWidth(60);
+
+		Image ronaldo = new Image("Ronaldo1.png");
+		ImageView RonaldoImg = new ImageView(ronaldo);
+		RonaldoImg.setFitHeight(350);
+		RonaldoImg.setFitWidth(250);
+		
+		Image ronaldo2 = new Image("Ronaldo_2.png");
+		ImageView RonaldoImg2 = new ImageView(ronaldo2);
+		RonaldoImg2.setFitHeight(350);
+		RonaldoImg2.setFitWidth(450);
 
 		// Messi
 	  	Button btnMessi = new Button("L.Messi");  
@@ -223,10 +233,10 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		HBox player5 = new HBox();
 		
 		player1.getChildren().addAll(portugal, btnRonaldo, juventus);
-		player2.getChildren().addAll(argentina, btnMessi, barcelona);
-		player3.getChildren().addAll(france, btnPogba, manchester);
-		player4.getChildren().addAll(brazil, btnNeymar, psg);
-		player5.getChildren().addAll(belgium, btnHazard, chelsea);
+		//player2.getChildren().addAll(argentina, btnMessi, barcelona);
+		//player3.getChildren().addAll(france, btnPogba, manchester);
+		//player4.getChildren().addAll(brazil, btnNeymar, psg);
+		//player5.getChildren().addAll(belgium, btnHazard, chelsea);
 
 	  	boxPlayerSelection.getChildren().add(player1);
 	  	btnRonaldo.setPrefWidth(150);
@@ -253,11 +263,18 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
                 
 		lblWelcomePlayer.setLayoutX(500);
 	  	lblWelcomePlayer.setLayoutY(125);
+		
+		RonaldoImg.setLayoutX(750);
+		RonaldoImg.setLayoutY(300);
+		
+		RonaldoImg2.setLayoutX(150);
+		RonaldoImg2.setLayoutY(280);
 	  	
 	  	// Adding to Grid
 	  	gridPlayerSelection.getChildren().add(lblChoosePlayer);
 		gridPlayerSelection.getChildren().add(lblWelcomePlayer);
 		gridPlayerSelection.getChildren().add(boxPlayerSelection);
+		gridPlayerSelection.getChildren().addAll(RonaldoImg,RonaldoImg2);
 
 		scenePlayerSelection = new Scene(gridPlayerSelection, 1280, 720);
 		}
@@ -273,7 +290,7 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		gridGoalkeeper.setBackground(new Background(selectionBG));
 
 		// Label for choosing players
-	  	Label lblChooseGoalkeeper = new Label("Please choose your favourite goalkeeper to save the penalties.");
+	  	Label lblChooseGoalkeeper = new Label("Your goalkeeper to save the penalties is D.de Gea.");
 	  	lblChooseGoalkeeper.setFont(Font.font("Arial", 30));
 
 
@@ -289,6 +306,16 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		ImageView manchester1 = new ImageView(manchesterFlag);
 		manchester1.setFitHeight(30);
 		manchester1.setFitWidth(60);
+		
+		Image degea = new Image("DeGea_1.png");
+		ImageView DegeaImg = new ImageView(degea);
+		DegeaImg.setFitHeight(350);
+		DegeaImg.setFitWidth(250);
+		
+		Image degea2 = new Image("DeGea_2.png");
+		ImageView DegeaImg2 = new ImageView(degea2);
+		DegeaImg2.setFitHeight(350);
+		DegeaImg2.setFitWidth(350);
 		
 		// Oblak
 		Button btnOblak = new Button("J.Oblak");
@@ -341,10 +368,10 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 		HBox keeper5 = new HBox();
 		
 		keeper1.getChildren().addAll(spain, btnGea, manchester1);
-		keeper2.getChildren().addAll(slovenia, btnOblak, atletico);
-		keeper3.getChildren().addAll(germany, btnStegen, barcelona1);
-		keeper4.getChildren().addAll(belgium1, btnCourtois, real);
-		keeper5.getChildren().addAll(germany1, btnNeuer, bayern);
+		//keeper2.getChildren().addAll(slovenia, btnOblak, atletico);
+		//keeper3.getChildren().addAll(germany, btnStegen, barcelona1);
+		//keeper4.getChildren().addAll(belgium1, btnCourtois, real);
+		//keeper5.getChildren().addAll(germany1, btnNeuer, bayern);
 	  	
 	  	boxGoalkeeperSelection.getChildren().add(keeper1);
 	  	btnGea.setPrefWidth(150);
@@ -368,10 +395,17 @@ public class AnimationApp extends Application implements EventHandler<ActionEven
 	  	
 	  	lblChooseGoalkeeper.setLayoutX(250);
 	  	lblChooseGoalkeeper.setLayoutY(200);
+		
+		DegeaImg.setLayoutX(750);
+		DegeaImg.setLayoutY(300);
+		
+		DegeaImg2.setLayoutX(200);
+		DegeaImg2.setLayoutY(300);
 
 	  	// Adding to Grid
 	  	gridGoalkeeper.getChildren().add(lblChooseGoalkeeper);
 		gridGoalkeeper.getChildren().add(boxGoalkeeperSelection);
+		gridGoalkeeper.getChildren().addAll(DegeaImg,DegeaImg2);
 
 	  	sceneGoalkeeperSelection = new Scene(gridGoalkeeper, 1280, 720);
 	  	return sceneGoalkeeperSelection;
