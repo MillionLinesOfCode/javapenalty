@@ -33,6 +33,8 @@ A simple football/soccer penalty shootout game, written in Java.
 
 `java AnimationApp`
 
+![alt text](http://lifesomundane.net/images/-rZ1GcHv5p_k/Uz4UWQqEHiI/AAAAAAAANMA/RzOgIadyUzE/s1600/penalty.jpg)
+
 
 # Installing and running javapenalty(GUI version)
 
@@ -49,8 +51,6 @@ A simple football/soccer penalty shootout game, written in Java.
 3. You should then be clear to run the AnimationApp file using 
 
 `java AnimationApp`
-
-![alt text](http://lifesomundane.net/images/-rZ1GcHv5p_k/Uz4UWQqEHiI/AAAAAAAANMA/RzOgIadyUzE/s1600/penalty.jpg)
 
 # Running JUnit tests 
 
