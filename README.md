@@ -70,6 +70,7 @@ A simple football/soccer penalty shootout game, written in Java.
 
 `java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore GoalkeeperTest`
 
+![alt text](https://simplifaster.com/articles/wp-content/uploads/sites/5/2018/07/Soccer-Penalty-Kick.jpg)
 
 # Finding demo-2
 
