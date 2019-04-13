@@ -90,6 +90,6 @@ A simple football/soccer penalty shootout game, written in Java.
 
 * [StackOverflow](https://stackoverflow.com/) of course.
 
-* [For further reading on the topic of penalty kicks in football](https://en.wikipedia.org/wiki/Penalty_kick_(association_football))
+* [For further reading on the topic of penalty kicks in football](https://en.wikipedia.org/wiki/Penalty_kick_(association_football)).
 
 ![alt text](https://i.ytimg.com/vi/uZsnr4No36I/maxresdefault.jpg)
